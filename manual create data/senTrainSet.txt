@@ -1,0 +1,1000 @@
+I have a list that is the a=[0,1] and I want to change with a=[0x00,0x001] type. How can I do this? I tried this way	c
+Using hex directly should work:	s
+You can format(...) the string as hex and zfill() the needed amount of zeros and prepending '0x' to it yourself:	c
+As you fail to describe what your wanted outcome is, I can only guess:	s
+Then it doesn't matter which format you use, both should work as soon as you use the correct format string:	s
+So, I'm trying to put numbers into a list and square and print them all.	s
+The first line - print (math.sqrt(item)) prints square root and the second - print (item*item) prints the square.	c
+SyntaxError is due to missing closing parenthesis on line 4 list(map(float, ListNum) should be list(map(float, ListNum))	c
+Sometimes the error is on the previous line (line 4 in this case), not the one indicated in the traceback (in this case line 5).	s
+And math.sqrt is calculating for square root:	c
+In the document of python3, which you can find the link at the bottom, math.sqrt() is described as	c
+You can't take the square root of a list, and ListNum is a list.	c
+The code will not deliver what you expect though.	s
+I have list of files in directory,ending with numeric.	s
+I'm able to extract the last numeric digit of above files.	s
+Now Here i'm trying to list all files which have higher version then play_football_5.	c
+You can use awk for this:	c
+printf will list all files in the current directory start with play_football_ and awk filters the files with the number greater than 5	c
+With these methods when i execute the class, the testng executes in the below order	s
+This is usually achieved in TestNG by using either dependsOnMethods or dependsOnGroups attribute for the @Test annotation	c
+You do this by implementing the interface org.testng.IMethodInterceptor and then wiring in the implementation via one of the following means	c
+The example as you would have noticed neither uses priority nor dependsOnMethods/dependsOnGroups	c
+You miss to put curly brackets in TestNG parameter (dependsOnMethods = "Submission01") It should be like (dependsOnMethods = {"Submission01"})	c
+I have just began playing around with React hooks and am wondering how an AJAX request should look?	s
+I have tried many attempts, but am unable to get it to work, and also don't really know the best way to implement it	s
+You could create a custom hook called useFetch that will implement the useEffect hook.	c
+By passing an empty array as the second argument to the useEffect hook will trigger the request on  componentDidMount	c
+Great answers so far, but I'll add a custom hook for when you want to trigger a request, because you can do that too.	s
+You can create a function using this hook for a specific API method like so if you wish	s
+And then just point createTodo to an onSubmit or onClick handler	c
+So, the correct way is: useEffect(() => { fetchData() }) where fetchData can be written as: async function fetchData() { ...}	c
+Here's something which I think will work:	s
+There are couple of important bits:	s
+Traditionally, you would write the Ajax call in the componentDidMount lifecycle of class components	c
+The dispose function is very important	s
+you can use that function to cancel a request, clear a timer etc.	s
+Any async function will return a promise, but not a function, so the dispose function actually takes no effects.	s
+I have a comment section where the user can enter comments, it automatically displays comments and the time the comment was entered.	s
+Add for .comments_wrapper the flex: auto; in order to align time to right	c
+Hope this will help.	s
+comments_wrapper selector not taking rest of the place that's why you not seeing the effect.	c
+You need to set the width of the .comments_wrapper	c
+Add flex: auto; to .comments_wrapper css	c
+I'm trying to remove oldest Student from my TreeSet but the object is not getting deleted.	c
+As others have said, your compareTo method is wrong.	c
+You should never return 1 when two instances are equal.	c
+but also because you are comparing students based only on their age	s
+Luckily, each student has a unique ID, so you could use this id to break ties	s
+Your compare method is simply spoken plain wrong.	s
+I would drop the Comparable interface from Student, and instead implement standalone Comparator<Student> instances.	c
+I want to check if table contains anything or not to create itself.	s
+Im trying to use the contains() to check but it doesnt work.	c
+you can Check the Row Counts	s
+if the tbl.rows.length is 0 that means the table don't have any rows	c
+You can check the number of rows in the table:	s
+you can just check to see if the innerHTML property is falsy	c
+There are multiple ways. One of way, you can use childElementCount property.	c
+Here is my current code where I am using loading spinner on each page until API response returns	s
+Now my question is how to use this <app-display-loading> component within *ngIf	c
+which is just a sugar for:	s
+And here is directive itself:	s
+Don't forget to include LoadingComponent into entryComponents array	c
+I am using something similar to <app-display-loading> all over the project and all I need to do is	c
+but first you need to add DisplayLoadingComponent class in the module in which the component is located like this	c
+I need to restructure my all forms and wrap over <ng-template>	c
+set isLoading accordingly and, set prevent default inside submit()	c
+Hi you can use HTTP interceptor for displaying spinner in every request.	s
+Or you can use your loading component on higher level and by CSS you can show loading on whole page so you don't need else condition part.	s
+You can do that using ng-template like:	c
+I have a JSON object like this, I wanna access the list array elements with key and value in postman.	s
+JSON format is a method of representing an object in a string, like const myJSON = '{"foo":"bar"}'	c
+you can use below codes:	s
+You can get using key and value separately in a array.	s
+I cant able to understand your question can you explain more?	s
+JSON objects are key value pair you cannot get the keys and values in object form as you desire but you can get both in form of arrays from this code	s
+First remove comma from line :  "qty": null, otherwise it will cause error in json parsing.	c
+I'm trying to read a dataset and set the integer value of the JSON file as the array of the list.	s
+If I try to get L1[1234] this would give an error as 1234 is not a valid index in the L1 and the indexes are 0,1	c
+I understand that the list has my potential value for the index as a value stored and in unicode	s
+Assuming you have a list of dicts you could do something like this:	s
+I'm very new to functional programming and I am open to any ideas.	s
+The trouble is that R.prop('id') and R.prop('name') are functions.	c
+R.assoc does not accept functions	c
+R.multiply accepts numbers	c
+If we supply lift(multiply) with two functions	c
+Unfortunately, this fails again.	s
+In the first one, you could replace R.merge with Object.assign without any real issues	c
+This solutions uses R.props and R.fromPairs	c
+You could achieve this by the following:	s
+You can create a pipeline (R.pipe) to convert your array of objects to a hash:	c
+This needs to be a unique number.	s
+the code should check the database if this number doesn't already exist. 	s
+What I have results in a page crash	s
+Not to mention, what you have here will not call checkRandNR() again	c
+Perhaps it would be more advisable to send a batch of random numbers with WHERE uid IN (...) or something so that you are less likely to perform multiple trips to the database	c
+I used this in one of my projects to generate ID:	s
+Based on the answers given, this is what I made, which works!	s
+Note that the bs.reduce((o, b) => Object.assign(o, {[b]: 0}), {}) is only called once	c
+This does not actually answer the question as asked	s
+Object.assign() could directly substitute the spread syntax and mutate the existing object without sacrificing much of your brevity	c
+Iterate array a with Array.reduce()	c
+When done, spread the Map's values through Math.min()	c
+and note that lookup could deteriorate from ~O(1) to O(log(n)) which would give you a total time complexity of O(n log(n))	s
+The approach can be constructing a hash-map while iterating over array A and access that hash-map while iterating over array B (Refer below code)	s
+Hello I'm trying to remove the actions property from each object within the array data:	s
+.upRight() returns true when a bot is standing and false when not	c
+The issue I'm facing, is that if the isUpright() method returns true for the first "bot"	c
+if isUpright() can transition from false to true over time	c
+The constructor for std::string(const char*) will be used to construct a temporary that will live for the whole lifetime of the function	c
+When the temporary std::string is bound to the const std::string& s, the temporary is lifetime extended	c
+Note when you say until the call to foo return is not the same as completion of the full-expression containing the call.	s
+As long as you are not doing something like:	s
+Or anything like storing a reference to this const ref, you should be fine.	s
+I would import class in nodejs and use it in app.ts	c
+Create app.ts with console.log('hello world'); and run node app.ts	c
+However, once you add typescript syntax (const foo: string = 'bar';) then it breaks	c
+import { something } is a typescript syntax, it won't work in a .js file.	c
+You use tuple(x, y) to create a tuple form 2 variables.	c
+This one liner will achieve what you want.	s
+One way is to convert both the nested lists into full lists and then use zip. Sample code below:	s
+and i want to check if the following list is the same as one of the lists that the array consist of:	s
+The builtin any() short-circuits so that you don't have extra evaluations that you don't need	c
+You can do it by using broadcasting like this:	s
+This applies to example such as A = np.array([[2,3,4],[2,3,4]])	c
+It seems I can't sort char array with Stream.sorted() method so that's why I used a second map operator.	c
+Instead of creating and sorting a char[] or int[]	c
+Of course, you can also use map(s -> Arrays.toString(s.chars().sorted().toArray())) instead of the series of four maps	c
+Also, you could use IntBuffer.wrap to make the arrays comparable, which should be considerably faster than Arrays.toString	c
+you get it for free when you wrap the array	s
+Note that for method references of the form expression::name	c
+the expression is evaluate once and the result captured, so canonical(list[0]) is evaluated only once for the entire stream operation	c
+However, I do think that it's strange to return false if the list is empty	s
+All we need is, for each word of the list, to count the occurrences of each character.	s
+For this, we're collecting each word's characters to a Map<Integer, Long>, with the keys being each character	c
+While this is true, I wonder whether this is any faster, or even slower, provided that this method presumably presents much greater overhead	s
+for short strings you are right, but for these, it probably doesn't matter anyway.	s
+I'm guessing this is what you what?	s
+Don't write your own parser. If you only need to read that string in each element of the array	s
+So (JSONArray)JSONValue.parse((String)JsonRow.get("PARAMS")) would get and parse the nested JSON.	c
+I have a list of dicts like this:	s
+dict.values returns a dict_values object, which is an iterable containing all the values of the dict	c
+zip(*thing) is a classic "transposition" recipe, which takes an iterable-of-iterables and effectively flips it diagonally.	c
+[[a,b],[c,d]] becomes [[a,c], [b,d]]	c
+You can use operator.itemgetter to guarantee ordering of values:	c
+This can be a little bit more memory friendly: list(zip(*(i.values() for i in l)))	c
+It seems that this does basically the same as @Kevin's solution with a listcomp instead of a map, correct?	s
+your code is fine, readable and efficient, which sounds Pythonic to me.	s
+You can get the desired information directly:	s
+If you're working with a large list of dicts, you might want to consider pandas.	s
+You could initialize a DataFrame directly:	c
+products.type IN ('FooProduct', 'BarProduct') will return 0 if a product type is none of them	c
+Instead of using Correlated subqueries,	s
+This is a basic solution, not so efficient but easy:	s
+This gets orders that have some other product, but it doesn't pick up orders that are mixes only of foo and bar.	s
+I am trying to find the inverse matrix of a given matrix using the np.linalg.inv() function	c
+The question is, is the matrix close to np.eye(4) or not.	c
+It seems like you just want to know how to get the identity matrix and compare if the results of your matrix multiplication are close to it.	s
+I've set up a timer for a function I am timing, but want it to reset after a condition is met	s
+The answer to your question as is in an easy Rails-like way to reset after a minute could be:	s
+Also you have this comment: places the time it takes for each loop.	s
+That's not exactly true in your code here, since you aren't resetting timestart on every loop	s
+What exactly are you trying to do after each 1 minute	s
+Looking for something embedded in go	s
+There are a lot of ways to do this and I would suggest the easiest to understand.	s
+Here is another one-liner	s
+To adapt code to output these cases	s
+I will wish in fact to learn to update my data on Laravel	s
+and also change your route with Route::PATCH('/update/{id}','YourController@update');	c
+you will need to add a hidden _method field to spoof these HTTP verbs	c
+The @method Blade directive can create this field for you	c
+you are missing @method('PUT') keep in mind that the method tag on your form should remain post this is an additional field.	c
+I have commented the line causing the issue	s
+you have to select the input tag and get the value try this document.getElementsByTagName("input")[0].getAttribute("value");	c
+Any tips are greatly appreciated.	s
+The reason I've done it in a separate javascript file is that I'll be calling APIs later on	s
+Your script will be called on load what means it will always return the default value Donald	s
+This is my very first day with classes and Inheritance in Python so please be gentle on me	s
+You overrode the __init__ of the subclass with a function that only accepts 2 positional arguments.	c
+That means it is valid to say Employee(1287123), but not Employee('Jack', 'Rome', 23, 'M')	c
+For class Employee, Employee.__init__ is hiding Person.__init__	c
+Python does very little "magic" in creating classes	s
+you usually get precisely what you specified	s
+It is good practice not to directly invoke methods of the base class	s
+avaScript Dates works in microseconds since UNIX time	s
+This problem is especially clear if you try to combine this with setTimeout or setInterval	c
+I would personally recommend simply using Math.random() for generating your random numbers	c
+are we not just doing a modulus of the epoch time	s
+new Date() is converted to the timestamp value	c
+So if we have e.x. 1540808514277 % 100 the result will be something between 0	c
+Actually, the expression new Date() % 100 can be translated to Date.now() % 100 which is propably more clear	c
+The rule here is mathematical and can be expressed in one sentence:	s
+The desired output is as follows:	s
+I have a big text file like the small example	s
+output should be z = "458888888" and z1 = "+91" else false	c
+and to match with given array of country code is y = ["+91","+92","+923","+912"]	c
+I don't know what is first step to proceed with this question, any help and suggestion	s
+You might use String.prototype.indexOf	c
+its failing in this case y = ["+1","+1684"] , x= "+168402443432424"	c
+What is the expected output in the above case	s
+If possible avoid the '+' sign from your array items, this will make the solution alot eassier	s
+sort the array in descending order, it will eliminate the chance to get partial matching	s
+I am creating an app for electricity recharge payment	s
+I want the app to work like this	s
+what kind of problem are you facing	s
+for example items[0] belongs to lists[0] etc.	c
+My code was not, check my code below	s
+Since the index in array is 0 based AND i=0 you have to change	c
+Just check for the necessary conditions before printing	s
+and also check for printing the values of array which are being pointed by indexes which are out of bound	s
+That is why it showed undefined	s
+You can use Array.sort() - always move the Unassigned to the end (the two ifs).	c
+You cannot assign to list[x] to create a new item in the list	c
+That is the syntax for modifying existing items	s
+Python does not allow this	s
+Given that zero length arrays are not permitted in C (so arr[0] always exists)	c
+and you already have explicit code for the opening brace	s
+Sorry I misread the , in printf(", %d", arr[i]);	c
+Idea is just loop till i < SIZE-1 and print the last digit outside of the loop	c
+there might be a chance that you didn't write @yield('content') in layout.dashboard blade template	c
+To extend a blade in laravel, you have to tell the file that should be extended where you want the section to be	s
+So your file to extend needs to have a @yield('sectionName') in order to extend the file correctly	c
+@extends It allows you to include the content of the one file into another	c
+The @section directive, as the name implies, defines a section of content	c
+you can use either @stop or @endsection both work fine.	c
+Is there any way to generate an apk file from android app Bundle via terminal or using android studio	s
+Read and reverse data chunk by chunk from a csv file and copy to a new csv file	s
+If you use pandas.read_csv() you dont have to do chunked transfer	c
+If you did you could call sort_index() with or without ascending=False depending on the order	c
+Pandas can write CSV too, please use that instead	s
+If you have sufficient hard disk space, you can read in chunks, reverse and store	s
+Below is an example with Pandas which also uses pickle	s
+You were calling the function factorial(n) but you haven't define n outside the function	c
+You can use math library in python.	s
+Inputs by default is String, You need to convert it to int	c
+Now that n = input("enter the number") is outside the recursive loop it is only called once and n is not externally updated during the recursion	c
+I'm using Angular 6 with an HTTP Interceptor configured to apply bearer token to outgoing requests	s
+I have a table death_notice and notice_time	c
+Now, I want to soft delete the data that crossed 35 days automatically in laravel 5.6	s
+Create a function to check the current time - created_at column, if> 35 days delete ...	c
+you can create laravel scheduling that run every night and execute below query	s
+where should i place this code to run and delete data automatically	s
+Hence the new key becomes (4, 4) and it replaces (8, 9)	c
+I am not able to understand how to access a list of lists which is the value to the key!	s
+don't forget about operator precedence, probably you mean 8 - (0+4)	c
+I would like to subtract the sum of the corresponding elements of the nested lists in the values from each element of each key, and replace the key with the result	s
+For your specific case, this should work	s
+you're modifying keys while iterating (use list (a.keys()) to avoid this)	c
+This was an inefficient way to edit it.	s
+You can easily achieve this using jQuery .fadeOut() effect.	c
+name distinct function name for distinct button id and set the background according to that	s
+call the same function but this time inside the function pass a parameter of button ID	s
+You could separate the logic into different functions and pass values as arguments to them	s
+Let's say my nested array is in the format [latitude, longitude] and the array that I want to input is [[10,20],[30,40],[50,60]]	c
+I want to return an array of only latitudes so [10, 30, 50]	c
+You could use the .map() method like so	c
+This is how you do it, for loops are not	s
+I'm still relatively new to Python	s
+The prompt that I was given for the program is to write a random number game where the user has to guess the random number	s
+Use and instead of or would work	c
+No string can possibly equal all of those different letters at once	s
+You can replace the PB + LB part of the code with any list that you want	c
+However, if you need to remove it in-place in the existing list	s
+Or just correct 2nd way while(n != 0 && i++)	c
+for (int n = 20; n > 0; n /= 2) ch[i++] = (n%2) + '0'; followed by for (int j = 0; j < i; j++)	c
+and && is applied to n != 0 and the updated version of i	c
+In general, use  char ch[sizeof(int) * CHAR_BIT];	c
+I am attempting to write a program that takes a user's input	s
+Then let the calculation of nth term of the Fibonacci sequence f = fib2(n); inside that function.	c
+If I move number.innerHTML = count; to the function, would that then fix the problem	c
+At the end, use Object.values to get the resultant array.	c
+I have two divs with id = "even-date" and id = "odd-date"	c
+If your concern is only display, then you can use script and css like below	s
+Thanks Ankush however I am not able to replicate on jsfiddle, can you please check this onec	s
+I am a 11 year old app programer and I am making a calculator app	s
+It's better to use double because in Java when you divide a smaller integer to bigger integer you will get 0	s
+Try this: 100 * num1 / num2	c
+But that row document.getElementById("message").style.display = "block"; selects only first div	c
+As the others have mentioned ids are unique and can only be used once on a page, so use a class instead	s
+There's also document.querySelectorAll() which is much more powerful	c
+You can use jquery and its selector	s
+Try changing the initialization of number_max from number_max = user_number to number_max = 100	c
+The solution to my problem was so obvious	s
+Is there's way to set Button width 50% of the total screen size	s
+Actually,you could use push to fix it.	s
+assigning the entire array with the object { personToList: personToList }	c
+Just use list.push(personToList) but set your state like this this.state.newPerson = [];	c
+First, make sure you installed react@next and react-dom@next	c
+When doing this, be careful with the sequence of your conditions as putting (hours < 10) before (hours < 6) would break the code	c
+if you used instance_variable_set("@name", value) they would be the same.	c
+In the case of a "simple" variable assignment for an instance variable like	s
+As per your question Aren't these two lines the same	s
+but isn't the use people tend to give	s
+While @name = value is accessible only from within the scope where the instance variable is defined	c
+there is less chance of introducing a bug (k.cut += 1); and	c
+I'm getting the error for p->letter = 'A' and p->age = '9'	c
+Don't cast the result of malloc() in C	c
+As many folks have pointed out you have a problem because in using typedef you went one step too far	s
+I cannot use a radio button and checkboxes name/id cannot be similar	s
+man you are a life saver, thank you very much	s
+For example, when I call findMaxRepeatCountInWord('expected') the letterCount object ends up with a value of { e: 1, x: 1, p: 1, c: 1, t: 1, d: 1 }	c
+Try testing with !hasOwnProperty (and using forEach instead of map) instead	c
+I don't think the Math.max function works for an array of number though does it	c
+Your code is correct, apart from the if-condition: if(letterCount[v] != true)	c
+Right, but the original code has parenthesis in place of brackets, which is important to change too.	s
+Works like a expression grouping	s
+and of course that requires myDict[100] already to exist	c
+However even prettier would be mydict[100] = mydict.get(100, 0) + 1	c
+I think you can easily fix it by checking if a tokens[i].equals("")	c
+Thus checking if a word is an empty string	s
+Why don't you get rid of all occurrences of 2 or more adjacent spaces and then split	s
+This works even with the header line includes special characters	s
+This works even if there are multiple blank lines in a row.	s
+The line breaks in the code are optional	s
+Use s/\Q$re//g to remove anywhere in the line instead of just removing the prefix	c
+To be fair: Just like karakfa makes assumptions, you also do	s
+or you can use is_null() method	c
+But the first() method give you single element, not a collection or array	c
+Instead of using count you can directly check variable itself is it defined or null	s
+if you use return a collection using ->get() then you can check $admin->count()	c
+Change if (count($admin)) with the code above	c
+but when if condition true the blank page come rather than print message in if condition	s
+Just replace if (count($admin)) with if (!empty($admin))	c
+The variable name given in wrong way.	s
+This is because scope of this variable $myfd_query is only inside if block	c
+It will be much more easier to understand it, even for the author of that code.	s
+you set variable only when isset($_POST["submit"]) but always execute query	c
+should be something like: $myfd_query="INSERT INTO 'logi'(firstname,lastname) VALUES('$fname','$lname')";	c
+Do not quote table name by ' or " symbols	s
+Better to use placeholders, instead of putting variables inside string	s
+Why I can't use get() method which pre-defined in ArrayList class?	c
+I would go with d.as_integer_ratio()[1] == 1	c
+Ah, the as_integer_ratio is better than as_tuple and counting trailing zeros	c
+since they are integers by definition but lack an is_integer attribute	c
+At this point, it's worth considering all of the other answers	s
+Why do not check if the difference between the truncation to integer and the exact value is not zero	s
+(*t == &x) the rest is correct.	c
+Likewise with int **t = &p we now notice that just like above	c
+The assignment in bool a = (*t = &x); returns a non-null pointer	c
+Now this could be read as x is an int *p is an int and **t is an int	c
+if you extended the code provided with int y = 99; and use int *p = &y;	c
+and you could then print various values and addresses before the bool line	c
+and print various values and addresses afterwards	s
+I just find myself not sure whether I understand how you are explaining what's going on	s
+I struggle with it all the time	s
+Were this comparison, the expression would compare the same values, and would be true	s
+Since C considers false=0 and true anything not equal to 0	c
+I need to tell whether a will be true or false, and the correct answer is true	s
+Another way to sort longer numbers is realizing you are just sorting by the reversed number	s
+Define a lambda function to pull out the digits you want, and use it as the sort key.	s
+Under the hood, Python will use __contains__(self, item) __iter__(self) and __getitem__(self, key) in that order to determine whether an item lies in a given contains	c
+this is the idiomatic way to accomplish said goal	s
+If it's just a substring search you can use string.find("substring")	c
+for highlighting the gotchas involved in substring searches	s
+Once again, you must consider if you want to include punctuation as a delimiter for a word	s
+it only splits when it sees all of the delimiter characters, contiguously, in that exact order.	s
+If you truly need a method instead of an operator	s
+Basically, you want to find a substring in a string in Python	s
+It's quite simple and intuitive	s
+Here, we call the .find() method on the string in which substring is to found	c
+The value returned is the index where substring was found.	s
+Does Python have a string contains substring method?	s
+Yes, but Python has a comparison operator that you should use instead	s
+Methods that start with underscores are considered semantically private	s
+Other languages may have no methods to directly test for substrings, and so you would have to use these types of methods	s
+so don't use s.find(ss) != -1 instead of ss in s	c
+No, there isn't any string.contains(str) method	c
+Here is a more complex working example	s
+Could the list iterable be switched around to look for any of the list in a single string	s
+So apparently there is nothing similar for vector-wise comparison	s
+You can use this syntax:	s
+It's work fine for lists, tuples, sets and dicts	s
+You can also check if an element is not in a list with the following if statement:	s
+I'm working with Python v2, and I'm trying to find out if you can tell if a word is in a string.	s
+I have found some information about identifying if the word is in the string	s
+but keep in mind that this matches a sequence of characters, not necessarily a whole word	s
+If you want to find out whether a whole word is in a space-separated list of words	s
+This elegant method is also the fastest	s
+This is my favourite answer	s
+I agree, but the quickest solution doesn't ignore case like re.compile()	c
+find returns an integer representing the index of where the search item was found	s
+This small function compares all search words in given text	s
+then you need re.escape(word)	c
+Advanced way to check the exact word, that we need to find in a long string:	s
+Using regex is generall solution, but it is to complicated for that case.	s
+Use split(separator, num) method for that	c
+Case-insensitive string comparison should use .casefold() not .lower()	c
+﻿How do I make this code shorter by using Arrays? 	s
+This is part of a larger code where I simulated the lottery. 	s
+this specific portion is where the user numbers are generated and I cant seem to figure out how to make this into an Array. 	s
+Or java 8+ you can use the ints() method to get a Stream and collect it to a Set: 	c
+be very careful with random.ints(0, 54).boxed().collect(Collectors.toSet()); as random.ints(0, 54) returns an infinite stream and currently there is no short-circuiting operation to consume the stream. 	c
+consider using limit or simply use the 3 arg version of random.ints where the first argument is the size of the stream. 	c
+Also, both your solutions are correct in the sense that the values in the accumulating set will have "unique" values but they're incorrect in "assuming" that the accumulating set will always have 6 "unique" values. 	s
+you'll need to call distinct before limit for the Java-8 solution. 	c
+This is a good answer for these inputs, but consider picking 9999 out of 10000 elements, or even more. 	s
+I mean distinct() would pay price in the time performance. 	c
+so at the end of the day, i want to return something like var image='/9j/4AAQSkZJRgABAQAAAQABAAD/4QB6R...' 	c
+Use array's filter(). 	c
+Come back to us if you're still having problem with it. 	s
+You can use find() to get the value you want. 	c
+It will return the first value found. 	s
+Empty strings are falser in javascript so you can write the find call back like: 	s
+You could map over (via Array.map) the main array and for each item use Array.find to get its photo. 	c
+you can try /^(-)?(\d){0,4}$ regex in pattern ^ assert the position at start and $ assert the position at end (-)? is used to match - 0 or 1 times (\d){0,4} is used to match digits i.e 0-9 between 0 to 4 times 	c
+I can type as many as I want, and if I use maxlength with that I end up with the same problem i have currently 	s
+You can check length of value of input using regex. 	s
+Also you can use type=number and min&max attribute for input instead of checking charCode in function 	c
+Thank you for the help. 	s
+I'm trying to figure out the regex stuff and was wondering, would I add something to the end of that regex to prevent additional hyphens? 	s
+Why not use <input type="number"> with min and max values? 	c
+Point regarding cross browser compatibility: <input type="number"> compatibility is "unknown" for the Edge browser. 	c
+I just tested this snippet in Edge and it works fine, but you would have to test the use of this type of element in the context of whatever was being developed to be sure. 	s
+First, make sure your json have the right format, because as i see you write a wrong json format, it should be "header1_body2":{ ... } 	c
+Read about filter and sorted 	s
+Assuming you read the JSON into a variable d (maybe using json.loads), you could iterate over the keys (sorted?) and build the lists with the keys of current value: 	c
+I think that it's difficult because he want to create a dynamic list and name of variable too, but if he wants value from the dictionary then it's possible to make a 2 dimensional list 	s
+The following Python 3.x integer multiplication takes on average between 1.66s and 1.77s: 	c
+if I replace 2 * x * x with 2 *(x * x), it takes between 2.04 and 2.25. 	c
+How come? 	s
+On the other hand it is the opposite in Java: 2 * (x * x) is faster in Java. 	c
+Java test link: Why is 2 * (i * i) faster than 2 * i * i in Java? 	c
+I ran each version of the program 10 times, here are the results. 	s
+Little hint: Use the timeit module for better statistics 	c
+For good measure you might as well throw in 2 * pow(x,2) and 2 * x**2 as well. 	c
+Also, please redo your timings using timeit, it's much more accurate than time.time() for short processes. 	c
+For small enough integers (including the ones we're considering here), CPython actually just uses the O(MN) grade-school digit by digit multiplication algorithm 	c
+You can see this yourself in the source. 	s
+The number of digits in x*x is roughly twice that of 2*x or x (since log(x2) = 2 log(x)). 	c
+Note that a "digit" in this context is not a base-10 digit, but a 30-bit value (which are treated as single digits in CPython's implementation). 	s
+Hence, 2 is a single-digit value, and x and 2*x are single-digit values for all iterations of the loop, but x*x is two-digit for x >= 2**15. 	c
+Hence, for x >= 2**15, 2*x*x only requires single-by-single-digit multiplications whereas 2*(x*x) requires a single-by-single and a single-by-double-digit multiplication (since x*x has 2 30-bit digits). 	c
+Here's a direct way to see this 	s
+I have two list. 	s
+I want add values in vp based on the list color. 	c
+Because I want that the code runs what follows: total = [10+20+30, 40+50,60] 	c
+I don't know how to do. 	s
+You can play with some slicing through lists to gather elements from original list based on content in another list, sum it up and append to final list: 	s
+This answer is not ideal for this example but it might be useful for other situations when you want to convert a dense representation to sparse representation. 	s
+In this case, we convert the 1D array to 2D array with padding. 	s
+For example, you want to be able to use np.sum: 	c
+Here is a minimal example: 	s
+foo<incomplete_type> f; will cause error because it will do sizeof with type, even though incomplete_type is not a arithmetic type(iow, it will not go into sizeof branch logically). 	c
+So, I want to defer sizeof: 	c
+conditional_t<std::is_arithmetic_v<T>, decltype(foo_aux<T>()), double> still trigger the same error. 	c
+conditional_t<std::is_arithmetic_v<T>, typename foo_aux<T>::type, double> still trigger the same error. 	c
+Yes, it works as expected, but its really tedious and ugly. 	s
+Do you have an elegant way here? 	s
+In C++17, you can use if constexpr to do type computation. 	c
+Just wrap the type into a dummy container and use value computation, then retrieve the type via decltype. 	c
+struct foo could be implemented like: 	c
+Your second attempt works if you wrap double in type_identity (which is a standard utility in C++20) and move ::type after std::conditional_t<...>: 	c
+I like that you've simply adapted the OP's code to work instead of proposing a new solution. 	s
+Thanks, man! 	s
+I use type_identity heavily in my own codes, but this is the first time to its power expect for replacing using type = 	c
+foo_aux_aux is just a special case of conditional. 	c
+Not a great improvement, I suppose, but you can rewrite your third (working) attempt in a little less ugly (IMHO) way using decltype() and declaring (only) some functions. 	c
+You can also use SFINAE: 	c
+I know about Sieve's Algorithm and that I was using until now to get prime numbers for upto 1 billion. 	s
+But now I need to know if a 10 digit number is prime or not, and Sieve's algorithm can't compute that within time limit. 	s
+I searched a lot and came upon Fermat's prime testing, but it didn't work out, as some part I couldn't understand and other part told that it only tells if it's probable prime or not with some iteration. 	s
+I want to know how can I test if a number that big is prime or not, under 1 second or so? 	s
+What would be the most efficient solution/algorithm for this? 	s
+I am also adding my code for Sieve's algorithm. 	s
+You can check either it is a prime number or not: 	s
+This method skip all even numbers and only try up to the square root of the number. 	s
+It is working fine for your given number 	s
+This is O(sqrt(N)), Sieve is much better, but it still does not give output in desired time. 	c
+I always use this code to check if an int is prime 	s
+It's inefficient to create the sieve just for testing a few numbers. 	s
+A ten digit number is rather small in this context as if it's a non-prime, it must have a divisor between two and sqrt(9_999_999_999). 	c
+So you check if it's even and then there are 50k divisor candidates to check. 	s
+If you don't want to do it yourself, there's BigInteger.valueOf(x).isProbablePrime(certainty) directly in the JDK. 	c
+There's also LongMath.isPrime(long x) in Guava. 	c
+So a couple of issues with this code Dheeraj. 	s
+I'll try to explain them one by one. 	s
+The first thing that you are trying to set your numeric type values under column F as String objects by putting them inside inverted commas and trying to divide a string via an integer. 	s
+So obviously it will give you an error. 	s
+Secondly, you're trying to put a conditional statement on the whole column by using final_df['D']=='Kg'; while you are iterating over row by row. 	c
+So if you are doing this via iterations, then you should refer to a certain row as well, like this - final_df['D'][row]=='Kg' 	c
+Another issue is with the iteration method. 	s
+While your loop was iterating 4 times, but it was of no good to iterate over using iterrows(). 	c
+I'll suggest to use the length and create the range of values and use this as an index(which you can see on my answer below). 	s
+In addition to Viveks answer using np.where, you could also consider the df.mask, which is a method specifically to update a column where a condition is true: 	c
+With combination of to_numeric + isin + replace functions: 	c
+I have two EditText input, when text changes after a calculation i have to display result on a textView in same activity. 	c
+addTextChangedListener is not working for me 	c
+What is the problem? 	s
+try by perimeterdetails.setText(s+""); 	c
+Not getting any result on TextView, even after trying perimeterdetails.setText(s+""); 	c
+The Code of Above works for me.... 	s
+Cause you are define your text view in onTextChanged 	c
+cut this line TextView perimeterdetails = (TextView) findViewById(R.id.perimeterdetails); befor addTextChangedListener 	c
+Still not working :( 	s
+Change the condition : if(!s.equals("")){} to if(s.length()!=0){} 	c
+So basically i am trying to make two commands called !on and !off and when the user types in !on it will start this infinite for loop and once the user types !off the infinite for loop will stop. 	c
+I have already tried many methods but it doesn't work such as another for loop such as: 	s
+How are you getting userInput? 	c
+Why not loop until userInput is not !off with a while loop? 	c
+What you want to do is while (condition is true) { do something } 	c
+It seems that the problem here is in your for loop. 	s
+Your for loop for(int i=0; i<10) triggers an infinite loop because the variable i is not being incremented, and will stay under 10 infinitely. 	c
+Replacing the for loop with for (int i = 0; i < 10; ++i) and see if executing the loop still results in an infinite loop. 	c
+Yes, i know it's posting a infinite loop. 	s
+I want it to be infinite. 	s
+First, this is logically and syntactically nonsense. 	s
+Don't do this. 	s
+What you are looking for is probably something closer to this: 	s
+I know this goes against the definition of random numbers, but still I require this for my project. 	s
+For instance, I want to generate an array with 5 random elements in range(0, 200). 	c
+Now, I want each of the elements to have a difference of at least 15 between them. 	s
+So the random array should look something like this: 	s
+I can generate random numbers using numpy: 	s
+However, I am not able to keep a consistent difference of at least 15. 	s
+You show only integers in the question. 	s
+Is that what you want, or can the random values be floating point (e.g. [1.343, 29.81, 74.4, 121.83, 189.9])? 	c
+I need to write a code to give a number and print me the F[number]. 	c
+This code is pretty slow. 	s
+Any ideas for a faster code? 	s
+n -= 1 is completely pointless; the range loop is using the original n. 	c
+I'm guessing you started with a while loop based solution, changed to for, then didn't delete the n-=1. 	c
+which performs O(n) work rather than O(2**n) work. 	c
+Memoizing could speed up the recursive solution (by decorating fibo with @functools.lru_cache(maxsize=None)), but it's hardly worth the trouble when the iterative solution is just so much faster and requires no cache in the first place. 	c
+I want to convert the following array: 	s
+You have to use a loop of some kind. 	s
+{...['a', 'b', 'c']} results in {0: "a", 1: "b", 2: "c"}. 	c
+It can't be done without map, reduce, or similar loop 	s
+You'll want to use the Array.reduce() method. 	c
+The reduce() callback method takes accumulator and currentValue parameters. 	c
+The {} is supplied as the last argument to reduce() as the initial value to start with. 	c
+You may use Array#reduce to get the desired result. 	c
+You could map objects and join to a single object with Object.assign. 	c
+I'm trying to convert this nested array data into an array of objects. 	s
+Here is the data. 	s
+The solution is printing out the first letters of the words instead of the whole word. 	s
+I am having a hard time understanding why. 	s
+I ask if any commenters could leave comments line by line to help aid my understanding of this program. 	s
+I wrote it with assistance of researching similar problems but still having a hard time understanding. 	s
+Here is a concise version using Array.reduce: 	c
+You was accessing a 3-level deep on the root array, so you where indexing the strings inside the 2-level arrays. 	s
+Using this: key = table_data[i][j][0] you was accessing the first character of the j-placed string inside the array on index i. 	c
+And using this: value = table_data[i][j][1] you was accessing the second character of the j-placed string inside the array on index i. 	c
+Also, you already know the first array are the keys (or headers), so you don't want to loop on it. 	s
+Your code contains three errors which can be fixed as follows: 	s
+Start iterating your outer loop from i = 1 to skip headers, which are at index 0. 	c
+Index into the headers array with tableData[0][j] instead of tableData[i][j][0], which is one dimension too many (accessing characters) and incorrectly includes the row index i. 	c
+Index into your data table with tableData[i][j] instead of tableData[i][j][1], which again accesses characters within your strings. 	c
+Beyond this, I recommend paying attention to spacing, semicolons and camelCasing conventions. 	s
+This will make your code easier to understand and debug. 	s
+I'm trying to update the object atribute: 	s
+new object would be updated as below. 	s
+I looking to update the object cr atribute for all values, for example using javascript.replace() method, I would do replace("-","/"). 	c
+That's just a simple usage of Array#map and String#replace: 	c
+I am trying to split a string by a delimiter only in certain situations. 	s
+To be more specific, I want to split the conditions of a split statement. 	s
+If I use split("or") I would get a split inside disorder too : 	c
+And if I try to use regex like split("[ )]or[( ]") I would lose the parentheses from ( x < 100) : 	c
+I am looking for a way to split the string only if the delimiter is surrounded by space or parentheses, but I want to keep the surroundings. 	s
+Regex is not the right tool to parse expressions. 	s
+You want to use Lookaheads and Lookbehinds for the spaces/parenthesis, so something like this: 	s
+The [ )] and [ (] mean to look at spaces or parenthesis. 	c
+The (?<=...) is a positive lookbehind. 	c
+The (?=...) is a lookahead. 	c
+You dont need a lookahead or a lookbehind to match a boundary character here. 	s
+Boundary characters are zero length by definition and will not modify the output. 	s
+Simply use x.split("\\bor\\b") 	c
+thanks, I wasn't aware of that. 	s
+Changed my answer accordingly 	s
+Your character sequence disorder == 1 or( x < 100) might parse into some token sequence such as this: 	c
+I am trying to parse expression for a programming language. 	s
+I am putting the expressions in a tree, each node being a class that implements an expression Interface, and I have the operations with higher priority lower in the tree. 	s
+The only method of the interface is evaluate, that evaluates addExpr() as a + b , mullExpr() as a * b and so on. 	c
+The parser goes on levels and splits the string holding the whole expression into sub-strings that will be evaluated by the same parser but on a higher level. 	s
+I am having trouble changing the the h1 tag when I click on either of the p tags. 	s
+I am having trouble with looping through the p tags, extracting the value and changing the title with that data value. 	s
+As of now I only get the error Cannot read property value of undefined. 	s
+getElementsByTagName returns collection of nodes. 	c
+Use Array.from() to build an Array from the HTMLCollection returned from getElementsByTagName(). 	c
+The loop goes through list of numbers. 	s
+I need to use map to accumulate the sum of all element[0] in another list's element[0] , sum of all element[1] in element[1]. 	c
+for i in l for j in i - do u need comma after l? 	c
+You don't need to construct a large list of lists from your data. 	s
+You can use an iterator and use sequence unpacking with zip. 	s
+To calculate the mean, you can use statistics.mean: 	c
+Use list comprehension : [sum(sub_list) for sub_list in l] 	c
+i tried to push an array to other array in specific order with this javascript code : 	s
+please any body show me how to achieve my desire result with splice function ps : i can achieve this with loop 	s
+sorry, My question was misleading. 	s
+Expected output : [["1,"2","3","A","B","C"],["1","2","3","D","E","F"]] 	c
+You can use Spread syntax like this const result = [...arr2, ...arr1]; 	c
+I have an array of string like this 	s
+How do i convert the above list into the below array list in python 	s
+You should encode your string not decode. 	s
+Your provided list (array of string as you mentioned) consists of a unicode sting. 	s
+To represent a unicode string as a string of bytes is known as encoding, use u'...'.encode(encoding). 	c
+Then by using string.split() you can break that encoded string down into smaller chunks, or strings. 	c
+Do it like this: 	s
+Hope it helps. 	s
+Use str.split() 	c
+My problem is to design a Python script which requires the user to input a password, and let Python validate the password is suitable for the conditions or not. 	s
+I enjoy this particular solution because I find validation to be such a good use of decorators. 	s
+why not get the whole thing in the regex? 	s
+if re.match(r"[A-Za-z][A-Za-z0-9-_]{5,}$", password) is None: ... 	c
+I have list of students. 	s
+I want to return list of objects StudentResponse classes that has the course and the list of students for the course. 	s
+So I can write which gives me a map 	s
+Now I have to iterate through the map again to create a list of objects of StudentResponse class which has the Course and List: 	s
+Or like this Map<String,StudentResponse> map = new HashMap<>(); students.forEach(student -> { List<Student> value = new ArrayList<>(); value.add(student); map.merge(student.getCourse(), new StudentResponse(student.getCourse(), value), (sr1, sr2) -> { sr1.getStudentList().addAll(sr2.getStudentList()); return sr1; }); }); then use map.values(); 	c
+Not exactly what you've asked, but here's a compact way to accomplish what you want, just for completeness: 	s
+This assumes StudentResponse has a constructor that accepts the course as an argument and a getter for the student list, and that this list is mutable (i.e. ArrayList) so that we can add the current student to it. 	c
+While the above approach works, it clearly violates a fundamental OO principle, which is encapsulation. 	s
+If you are OK with that, then you're done. 	s
+If you want to honor encapsulation, then you could add a method to StudentResponse to add a Student instance: 	s
+Then, the solution would become: 	s
+This solution is clearly better than the previous one and would avoid a rejection from a serious code reviewer. 	s
+Both solutions rely on Map.computeIfAbsent, which either returns a StudentResponse for the provided course (if there exists an entry for that course in the map), or creates and returns a StudentResponse instance built with the course as an argument. 	c
+I'm using LinkedHashMap instead of HashMap to preserve insertion-order, i.e. the order of the students in the original list. 	c
+If you don't have such requirement, just use HashMap. 	c
+Given a List<T> as the source, after using the groupingBy overload taking a classifier alone the result map is Map<K, List<T>> so the mapping operation can be avoided. 	c
+As for your question, you can use collectingAndThen: 	c
+collectingAndThen() can be cleaner when you want to pass the result to another function. 	c
+This can be done in a very concise manner using the jOOλ library and its Seq.grouped method: 	c
+It assumes StudentResponse has a constructor StudentResponse(String course, List<Student> students), and forwards to this constructor using the following Tuple.function overload. 	c
+As you can see from my other answer as well as shmosel's answer, you'll eventually need to invoke studentsMap.entrySet() to map each Entry<String, List<String>> in the resulting map to StudentResponse objects. 	c
+Another approach you could take is the toMap way 	c
+This essentially groups the Student object by their course (Student::getCourse) as with the groupingBy collector; then in the valueMapper function maps from Student to a StudentResponse and finally in the merge function utilises StudentResponse::merge in the case of a key collision. 	c
+This code seems straightforward enough 	s
+I'm expecting it to return 	s
+But when the loop is complete, it shows 	s
+When printing the values in the console, they appear correct, but when the store variable is logged, they are all reordered. 	s
+Why is this occurring? 	s
+There is a similar question here, but it doesn't really provide an answer for my case. 	s
+Alternate approach leaving original array untouched and using splice() to remove beginning elements and concat() to add to the end 	c
+On every loop, you are pushing the reference of the array to store 	s
+Loop - reference of arr - 0x112, then store[ i ] = reference to 0x112 	c
+arr - refer to 0x112 - value = [1, 2, 3, 4, 5, 6] 	c
+store[ ] = [ref(0x112), ref(0x112), ref(0x112), ref(0x112), ref(0x112), ref(0x112)] 	c
+This question as a JS-only answer here. 	s
+But simply because I'd like to become more proficient with Lodash, I'm looking for the Lodash solution. 	s
+Let's say I have an array that looks like: [[a, b, c], [d, e, f], [h, i, j]] 	c
+I'd like to get the first element of each array as its own array: [a, d, h] 	c
+What is the most efficient way to do this with Lodash? 	s
+let result = arr.map(a => a[0]) 	c
+No need for lodash in this case 	s
+Lodash version: let result = _.map(arr, a => a[0]); 	c
+You could use _.map with _.head for the first element. 	c
+You can also use the _.matchesProperty iteratee shorthand, which many lodash methods support. 	c
+With lodash you can do this with _.first, _.head (_.first is just an alias of _.head) and direct path while mapping through the array: 	c
+I'm just starting with Java. 	s
+I wonder if there's a way to add a method so that any String can call that method, similar to how we have now string1.equals(string2) that you could use string1.equalsOr(string2, string3, string4, string5). 	c
+To determine if string equals any of the parameters passed to Stream.of(). 	c
+This is not as pretty as a simple equalOr() method, but it still gets the job done without having to write your own method 	c
+Is there an easy way besides using the OR (||) expression to look for all variations of PO Box using javascript? 	c
+The address field is being pulled from a pre-populated database column. 	s
+I need to disable an option if the address has any variation of PO Box in the address column. 	s
+if( Address.test(/po box/gi) ). 	c
+if( Address.toLowerCase().includes("po box")) 	c
+if( Address.toLowerCase().indexOf("po box")) > -1 	c
+Personally i think 1st method is more clean and fast. 	s
+If you use distinct(listOfTags, ["label", "color"], false), it will return: 	c
+Then add .rename like df['values'].ne(df['values'].shift()).cumsum().rename('val1') 	c
+could you please explain it by dividing it into parts df = df.groupby([df['values'].ne(df['values'].shift()).cumsum(), 'values']).size() as it is not clear, will be grateful to you. 	c
+You can keep track of where the changes in df['values'] occur: 	c
+And groupby the changes and also df['values'] (to keep them as index) computing the size of each group 	c
+I have this table structure and sample data along with the query. 	s
+I am expecting 2 rows in result set. 	s
+It should take NULL as maximum if there is no Transaction No present other than NULL for that specific code. 	s
+In my case it is either giving all 3 rows on only with max transaction no ignoring the NULL valued rows. 	s
+And This means everything 	s
+ISNULL(TransactioNo, 1) is always 1 and (SELECT MAX(ISNULL(TransactioNo, 1)) FROM NULLTEST N) is always 1 too 	c
+You can simply use MAX() function along with GROUP BY clause 	c
+Assuming that TransactioNo cannot be negative just change ISNULL(TransactioNo, 1) to ISNULL(TransactioNo , -1). 	c
+if you not satisfied, you can omit the ids whose value is null, you may see the following snippet: 	s
+I have a HashSet of Persons. 	s
+A person has a firstName, lastName and age like: Person("Hans", "Man", 36) 	c
+My task is to get a list of the persons who are older than 17, sort them by age and concat the firstName with the lastName like: ["Hans Man","another name", "another name"] 	c
+Im just allowed to import: 	s
+import java.util.stream.Stream; 	c
+import java.util.stream.Collectors; 	c
+import java.util.List; 	c
+import java.util.ArrayList; 	c
+My idea was to sort them first, map the names in separate Streams and to zip them, but it doesn't work. 	s
+thank you in advance 	s
+You’re thinking too complicated. 	s
+Just use map(p -> p.getFirstName()+" "+p.getLastName()). 	c
+This has nothing to do with zipping. 	s
+And don’t store each stream stage into another variable. 	s
+Just chain the steps, List<String> result = stream.filter(p -> p.getAge() >= 18) .sorted(Comparator.comparingInt(Person::getAge)) .map(p -> p.getFirstName() + " " + p.getLastName()) .collect(Collectors.toList()); 	c
+Here we just map the sorted stream by concatenating the first name and then the last name, after which we use the .collect() terminal operation to collect it to a list. 	c
+why did you edit it? 	s
+the first one was the solution I was looking for because Im not allowed to import java.util.Comparator 	c
+Thought it was cleaner, missed out your constraints. 	s
+Changed it back. 	s
+what does this even mean "you are not allowed to import java.util.Comparator"? 	c
+I've never heard of such a strange import agreement... but you know that you can also use: java.util.Comparator.comparingInt and no import would be visible? 	c
+After the first map, the Stream is of type String which doesn't fit Person::getLastName. 	c
+You need to concat within the first map() call itself. 	c
+Inside getNamesOfAdultsSortedByAge method: 	c
+I suppose it should suit your needs. 	s
+filters people that are only 18 or older, second line sorts given by getAge predicate, third just maps Person instance to a string containing %firstName% %lastName%, and fourth collects the result into a list. 	c
+I know of some rules that imply that no other dependency should be used than the one listed on the "allowed list of dependencies", but I've never heard of a rule that only allows to use like 4 imports but disallows one of the most important ones. 	s
+If Comparator would be an internal interface/class I could understand it, but it's an essential interface. 	s
+You even use it as a functional interface if you write (x, y) -> Integer.compare(x.getAge(),y.getAge()), so I really don't get why this import shouldn't be allowed. 	c
+That being said: my solution does not require you to use an import to java.util.Comparator. 	c
+I have to print a pyramid of numbers with this rule: 	s
+I'm a beginner with recursion, I'll be glad for your explanations too. 	s
+Do you need to use recursion? 	s
+print('\n'.join([''.join(map(str, range(1, n+1)[::(-1)**(n%2)])) for n in range(1, 10)])) 	c
+(1,-1)[n%2] 	c
+It is the same number of bytes though, right? 	s
+n%2*2-1 and in python2 you can skip parenthesis. 	c
+And range(9): print'\n'.join('123456789'[:n+1][::1-n%2*2]for n in range(9)) 	c
+When you use for(var i in test) then i will be an iterator, meaning its value will be 0,1,2,...n where n is the index of the last element in the array. 	c
+For arrays you can use Array.prototype.forEach() 	c
+I have a state variable that is a object (called testObject). 	s
+I store several objects in that state variable. 	s
+I am looking for a way to check if a object already exists in that state variable then remove it if true. 	s
+you can check using this Object.keys(obj).length 	c
+How can I let the user choose a number say n and then create an array with the size of n? 	s
+Can I just say int a[]=malloc (n*sizeof(int))? 	c
+I'd be careful letting users allocate an arry of any size. 	s
+I am developing a program. 	s
+In this program I want to let the user to edit the jtable(table has two column and user enter the data into second column). 	s
+After that I want to store that edited data into integer type array(in this case I want to store second column data only). 	s
+When I run this program with above code, there are some errors. 	s
+How do I prevent this error? 	s
+i <=this.noofprocess 	c
+Are there two columns in the table or are there three columns: model.getValueAt(i, 2). 	c
+Change for(int i=1; i <=this.noofprocess;i++){ to for(int i=0; i <this.noofprocess;i++){, reason is indexes are 0 based and size of collection starts with 1. 	c
+Your initialisation of model is also the cause for the error. 	s
+You should rather have DefaultTableModel model = (DefaultTableModel)tablebursttime.getModel(). 	c
+You can also add stopCellEditing() to prevent a possible nullReference while the last cell of column 2 has focus. 	c
+I have a dict with several entries for the value. 	s
+Using x.values() is easier, no? 	c
+I have a csv file containing thousands of tweets. 	s
+Lets say the data is as follows: 	s
+as you can see, the data contains tweet_id and the hashtags in each tweet. 	s
+What I want to do is to go to all the rows, and at last give me something like value count: 	s
+Considering that the csv file contains 1 million rows (1 million tweets), what is the best way to do this? 	s
+Using np.unique 	c
+df=df[df['hashtags_in_the_tweet'].astype(bool)].dropna() using my method after filter 	c
+One alternative with np.hstack and convert to pd.Series then use value_counts. 	c
+using df=df[df['hashtags_in_the_tweet'].astype(bool)] filter you dataframe first 	c
+Pandas methods aren't designed for series of lists. 	s
+No vectorised approach exists. 	s
+One way is to use collections.Counter from the standard library 	c
+Believe me I'm getting the count of each letter. 	s
+when I read my csv as a dataframe, if I do : type(df['hashtags'][10]) , the result is str. and df['hashtags'][10] I get '[Mexico]' 	c
+Sounds like you want something like collections.Counter, which you might use like this... 	c
+Hello I would like to make a javascript function to return 7 words before and after a math to an specific keyword 	s
+However when I search in my text "create" I justo got: 	s
+My complete code looks as follows, with my corresponding string called Text, so I would like to appreciate the support to overcome this task. 	s
+You can split the text into a words array and find the index of the word then use Array#slice() and Array#join() 	c
+Your regular expression works perfectly for me. 	s
+Change b=text.match to b=Text.match, because you want to match against the string outside of your function. 	c
+Currently, you match the expression to a string containing only the desired word. 	s
+(?:\w+[,\.]? ) is a word followed with a comma or dot optionally and a space 	c
+(?:[\,.]? \w+){7} matches 7 words with an optional comma or dot and a space before 	c
+I am looking at this code: 	s
+I do not understand why I need to use () => this.tick() instead of just this.tick(). 	c
+The prior calls a function that uses this.tick(), yet when I change () => this.tick() to this.tick(), the code stops working. 	c
+this.tick() is no longer being called even though it itself is a function. () => this.tick() seems to be just an unnecessary step and yet it is necessary. 	c
+I think I am misunderstanding functions as objects. 	s
+() => this.tick() is a function that when executed will call this.tick() with the appropriate context. 	c
+If you didn't want to use arrow syntax, you would need to bind the this context similar to this.tick.bind(this); 	c
+If you would have only setTimeout( this.tick, 1000 ), it would rightfully call the function on the class, however, that function wouldn't have a this scope... 	c
+I have a list of Integer List, like list1=(1,2,3) and list2 = (0,1). 	c
+You can do this via Array.reduce to do the grouping by group and then use Object.entries with Array.map to get the desired output format: 	c
+The way you are using addAtoO suggests that you don't care about altering the original objects. 	c
+If that's the case, then a simple forEach will do: 	c
+You can use map as you are using , & use it's index to get the value from arr array and create a new object with values from obj & arr 	c
+You can use .map() like this: 	c
+I have written a method which returns a map. 	s
+The map can contain more than 1000 keys, and each key can contain a list more than 10000 in size. 	s
+I want to get those keys which have largest list size. Is there any approach to get the result in minimum time if possible? 	s
+In case you want to store all the keys with the maximum, store them to the Set<String> and replace the condition with: 	c
+I expect the data are already mapped to the Map <String, List<String>> structure so I worked with it. 	c
+a TreeMap<Integer, String> that maps list sizes to your "real" map keys 	c
+that real Map<String, List<String>> that holds your actual data. 	c
+You can get just the keys using mapping(Map.Entry::getKey, toList()) instead of toList() 	c
+I have different config files which are basically python files that define variables and I want to import them in my main program. 	s
+So I can run my program loading those variables into memory. 	s
+This is in response to your details and not the question. 	s
+If you want to load variables such as num_iterations = 100, initial_value1 = 10, initial_value2 = 20 from a file, then I'd really recommend some sort of config instead of abusing imports for global variables. 	c
+Alternatively you could use ConfigParser, which looks nicer, but I've found it to be quite prone to breaking. 	c
+I have a java program which is gonna be manually run every day. 	s
+Now I want to create an excel file per wek to write in it all tasks of the week 	s
+I know how to create a file every day like this: 	s
+Java provides java.util.concurrent.ScheduledThreadPoolExecutor that can additionally schedule commands to run after a given delay, or to execute periodically. 	c
+Since you're using LocalDateTime, you can do a check using getDayOfWeek method. 	c
+use calender API, calendar.get(Calendar.DAY_OF_WEEK) will return int 2 for Monday. 	c
+Hey I would like to know how to show a div and hide another at the same time. 	s
+And that it only does that when I give an input of 5 or higher: 	s
+this needs to show: <div id="testje" class="CalculatorRight" style="display:none"> 	c
+This needs to hide: <div id="SummaryHTML" class="CalculatorRight"> 	c
+There is a get request in componentDidMount() 	c
+This console.log(manufacturers) shows that there are objects in the array, but the state of component is empty. 	c
+How to set it properly after fetching data? 	s
+The problem comes from async logic. 	s
+Using this.setState() outside of the fetch's then() causes the manufacturers property to be empty. 	c
+Always remember setState() itself is async and if u need to do any operation after setState , do it in setState() 's callback optional argument like:- 	c
+﻿Write a console app in C# to find an index i in an array that is the maximum number in the array.	s
+If the maximum element in the array occurs several times, you need to display the minimum index.	s
+If the array is empty, output -1.	s
+Please let me know what is wrong in my code?	s
+If I input the array a = { 1, 2, 46, 14, 64, 64 };, for instance, it returns 0, while it should be returning 4.	c
+Debug. Step through code and see where it goes wrong.	s
+"Please let me know what is wrong in my code." You should tell us what goes whrong. This means describe what problem you´re facing. Do you get any errors? Unexpected results? Afterwards we may able to help you to solve that problem.	s
+if (maxCount > 1) return minIndex; Should be maxIndex	c
+Why you calculate (also) the min if you just want the max? Methods should only do what they're supposed to do	s
+Your calculation is correct, but you return the wrong variable minIndex instead of maxIndex.	s
+Don't do more than necessary in a method.	s
+This calculates also the min-index and the count how often it appears, then it does nothing with the results.		s
+Here is a compact version:	s
+It also sets maxInd = -1 which was part of your requirement.	c
+Since MatthewWatson had an objection regarding repeating double.MinValue in the array, here is an optimized version:	s
+If code-readability/maintainability is more important and you don't care of few milliseconds more or less, you could use LINQ (a version that enumerates only once):	s
+This works with every kind of sequence and types not only with arrays and doubles.	s
+Obviously you could fix that by changing if (max < array[i]) to if (maxInd < 0 || max < array[i]), but it's probably not worth it!	c
+this code will incorrectly return -1 rather than 0 - but it seems really unlikely that you'd ever hit that edge case.	s
+just wondering, why does this code get 3 upvotes, whereas mine gets 4 downvotes?	s
+Whilst they basically both do EXACTLY the same, except this one iterates through the ENTIRE array twice	s
+Array.IndexOf(numbers, numbers.Max());	c
+It returns zero, because minIndex is indeed zero: Change minIndex to maxIndex:	s
+To be fair, this is really the correct answer to the question "Why isn't this code working".	s
+The other answers are all rewriting the code rather than correcting it.	s
+also, this code can be replaced with a single line Console.WriteLine(Array.IndexOf(a, a.Max()))	c
+"Your code in general is way too complicated with way too many variables"	s
+Again, like with the other answers on this page you have missed the point of the question.	s
+I am having trouble changing the the h1 tag when I click on either of the p tags.	c
+As of now I only get the error Cannot read property value of undefined.	s
+getElementsByTagName returns collection of nodes.	c
+Thanks for the help. Is there a long way to extract the data set from the p tag? Or would it make sense to just use this.	s
+This will do the trick (javascript only) p.getAttribute('data-value'); returns the value of the specified attribute	c
+Use Array.from() to build an Array from the HTMLCollection returned from getElementsByTagName().	c
+What I am trying to achieve: center a container div (that contains two divs) and in 2nd div, bottom align text	s
+I can't align my two paragraphs to be at the bottom. They are at the top.	s
+My container div isn't aligned to the center too	s
+Thank you! it works!	s
+however, there's a little gap between img and the bottom border.	s
+why so? i don't see any padding in your column2 code	s
+Changing your align method to Flex, you could achieve this easy, take a look bellow	s
+Just removed float: left on the column elements and added display: flex and align-items: flex-end at the container.	c
+The easiest and probably nicest solutions for this is using a "flexible box layout".	s
+I have a class API with a function which I wish to call in my component.	s
+I do not arrive in found how to call this function in my component and as to get back its result to put it in setState	s
+You wouldn't call this.setState() from your exported function.	c
+You should create a function that does the authentication, and then returns a Promise if the authentication was successful or failed.	s
+In your componentDidMount(), or onSubmit(), call the function and in the component itself, use this.setState() to update the state variables.	c
+First: separate your setState from your api helper method like:	s
+Then call you api function inside of componentDidMount() lifecycle method of your Component like:	c
+On windows, it is located in python-installation/scripts/pip.exe	c
+And it says it is already installed but for Python 2.7 at the bottom. My script shows it is a Python 3 script at the top though.	s
+I am using the Jupyter notebook with Python 3 selected. On the first line of a cell I am entering:	s
+The error I get from the notebook is, ImportError: No module named 'pandas'. How can I install pandas to the jupyter notebook?	s
+The computer I launched the Jupyter notebook from definitely has pandas.	s
+When I do echo $PATH in Ubuntu is shows that '/home/user/anaconda2/bin' is on the first entry.	c
+I think I may need to change this to be anaconda3?	s
+Additionally, I tried removing anaconda but still experience the same error.	s
+I have tried to make so many quick fixes now, that I am not sure what the next step is to get this working.	s
+and I like to extract a DataFrame containing only thoses rows,	s
+that contain any of selection = ['cat', 'dog'].	c
+So the result should look like this:	s
+What would be the simplest way to do this?	s
+Use df = df.loc[df.species.str.contains('cat|dog'),:]	c
+Using Numpy would be much faster than using Pandas in this case,	s
+is looking for the presence of 'cat' or 'dog',	s
+i would recommend changing the mask to this mask = df.species.apply(lambda x: any(item for item in selection if item in x))	c
+updated the lambda with selection example	s
+This is an easy and basic approach.	s
+You can create a function that checks if the elements in Selection list are present in the pandas column list.	s
+Hope it helps.	s
+Using pandas str.contains	c
+You could then use this list to create a column that contains True of False based on whether the record contains at least one element in Selection List and create a new data frame based on it.	s
+here is my view:	s
+any help will be appreciated.	s
+Not related to the question, just a note.	s
+Shortenings like "for -> 4", "weight -> w8" can quickly render your code unreadable, best avoid them.	c
+Does your action get hit if you enter in the browser address manually: http://localhost/Test/AddToCart?value=123?	c
+are you getting the alert at alert("Selected Weight " + w8) ?	c
+There are few things that could go wrong here.	s
+So it looks like your posting code should look like that	s
+Third thing is that you are not preventing default behavior of your button.	s
+You can do so with return false or calling preventDefault, like so:	c
+i have edited but the function is not hitting	s
+After all, what you should be doing first, is to check your browser developer console, to see what the actual problem is.	s
+Your using (Html.BeginForm()) is inside the for loop. 	c
+This means you will create as many form tags as there are elements in the loop.	s
+So place your using (Html.BeginForm()) before you begin the loop.	c
+Also this will generate multiple submit buttons with exactly the same id, which is absolutely wrong as html element id must be unique	s
+It could possible be that the controller is expecting an integer value passed.	s
+A quick check would be to set this value to a string to see if it hits.	s
+Otherwise you could try the suggestion below.	s
+Try parse the weight value var weightValue = parseInt(w8);	c
+Have you set a breakpoint on the controller action and is it getting hit?	s
+Any console errors linked to the client side?	s
+Please Change following some bit changes and try.	s
+Please call foreach under the using (Html.BeginForm())	c
+i have many products in page, when i select weight and press add to cart button it only works on first product and not on all others	s
+I have an object like this:	s
+And I have found a way to list all the key objects:	s
+But how can I print a list with key, value, name, denominations?	s
+I tried keyVal.properties but that didn’t work.	c
+I've tried to search for a solution here, but haven't found anything.	s
+What I want is an output that looks something like this:	s
+You can access it this way. This might help you.	s
+You could use Object.keys(currencyTypes) to retrieve all of an objects keys, and then loop over those:	c
+You could use for...of loop with Object.entries to get key value.	c
+then iterate over that with Array.prototype.forEach.	c
+If you represent your collection as an array, it'll becomes easier to do this kind of things:	s
+If you want to stay with using an object, look at Object.keys(), Object.values() and Object.entries().	c
+Those will do alot of the converting back and forth from objects to arrays.	s
+basically is the same as Object.keys():	c
+The function you coded to get the amount of keys in the object,	s
+See if this helps. with pd.option_context('display.max_rows', None, 'display.max_columns', None): print(df)	c
+In case you want to have "," too, just change the line print("\t".join([str(ele) for ele in subLst]))	c
+And the complete thing as a one-liner: print("\n".join([",\t".join([str(ele) for ele in subLst]) for subLst in myLst]))	c
+Which can be used in order to make everything shorter	s
+You have a nice chance to use map() here: print("\t".join(map(str, sub_list)))	c
+Your concrete format wishescan be solved by printing with ljust to add the needed spaces:	s
+Generally for formatting you can use the string format mini language to format your output to your liking:	s
+The format string "{:<{}} ".format(elem,max_len+2) formats element rightaligned into max_len+2 characters.	c
+The first thing is just to make your , not appear on the start of the line.	s
+OMG this is so convoluted.	s
+Try this: print('\n'.join('\t'.join('{:{width}}'.format(y, width=m) for y in x) for x in a))	c
+Which gives a transposed copy of your data like this:	s
+Then we use the map function to apply the len(str(x)) function over these columns:	c
+or e.ljust(spacing[i] + 1) if you wish	c
+However this just prints ENBO => [	c
+And I want to search for the containments of ENBO specifically, not hard-code search for h4d gh34245 ran54	c
+This is tested in a mock text file:	s
+Note that readlines() goes through the whole file,	c
+There are three errors in the code.	s
+You can not use s[index] = value, since the string is immutable.	c
+The first write (when it would be possible) would write on the position	s
+and this position is out of range, since it s indexed from 0 to s.Length - 1.	c
+convert it to a char array first (using ToCharArray),	c
+LINQ would let you do var output = new string(input.Reverse().ToArray());	c
+but if you want to use a for loop and your current approach, this is probably the piece of information you are missing.	s
+These will be the minimal changes required in your code:	s
+Instead, use StringBuilder.	c
+You can not use s[s.Length - i] = sReversa[i];	c
+Instead, you can use sReverse = sReverse + s[Length];	c
+The following code will give you reverse of a string:	s
+For a large number of iteration, this might be a performance issue.	s
+The __doPostBack() method works well.	c
+From your JavaScript, retrieve the reference to the button using its ClientID and then call the .click() method on it.	c
+This will call the 'RaisePostBackEvent' method in your code file with the 'eventArgument' as the 'argumentString' you passed from the JavaScript.	c
+it gives me an error says object expected. I have called it in such a way: window.onbeforeunload = confirmExit; //debugger; function confirmExit() { var pageId = '<%= Page.ClientID %>'; var argumentString = 'ReleaseLock'; __doPostBack(pageId, argumentString); }	c
+Another solution (very hackish) is to simply add an invisible ASP button in your markup and click it with a JavaScript method.	s
+By doing so, if your control is inside an update panel, the page will not refresh.	s
+If anyone else is like Merk, and having trouble over coming this, I have a solution:	s
+Add this line to page load if you are getting object expected error.	s
+You can also get it by just adding this line in your JavaScript code:	s
+There are some compelling warnings about the usage of XHTML, primarily centering around the fact that the mime-type for such a document should be sent as: Content-type: application/xhtml+xml	c
+Yet IE 6 and 7 don't support this, and then websites must send it as: Content-type: text/html	c
+If you want to use XHTML 1.0 in an HTML-compatible way, that's fine.	s
+XHTML is XML based, so it allows easier parsing and you can also use the XML Components of most IDEs to programatically query and insert stuff.	s
+Cannot think of anything better than int callDo2(void) { if(do2()) { undo1(); return 2; } return callDo3(); } at the moment,	c
+you could chain your function calls using else if like this	c
+Also, note it is wrong: if Do5() fails, we don't want to run Undo5()	c
+switch(ret) should be switch(ret-1).	c
+I don't think if (0) {..} introduces any parsability/readability problem.	c
+Almost all compilers will remove the if (0) {} part.	c
+I’d remove the if (0) branch and reformat the rest such that else is on its own line, surrounded by a guard along the lines of #if TEST1_ENABLED && TEST2_ENABLED.	c
+so both the member-function foo::add(int) and the non-member add which takes an explicit foo* first arg compile to exactly the same asm.	c
+it's just implicit in C++, i.e. T Class::method(...) is just syntactic sugar for T Class_Method(Class* this, ...).	c
+GCC 7.3.0 with the -march=x86-64 -O -S flag is able to compile cout << e.foo() to three instructions:	c
+This is a call to std::ostream::operator<<.	c
+Remember that cout << e.foo(); is syntactic sugar for std::ostream::operator<< (cout, e.foo());.	c
+And operator<<(int) could be written two ways:	c
+static operator<< (ostream&, int), as a non-member function, where the operand on the left is an explicit parameter, or operator<<(int), as a member function, where it’s implicitly this.	c
+In fact, inside a member function (that isn’t static), x, this->x and (*this).x all mean the same thing.	c
+Wouldn't it be better to reverse the condition and use string.isalpha() instead?	c
+So it should work provided str.isdigit is acceptable for OP's user case.	c
+Note that 191-b12 != 181-b13.	c
+After downgrading, you can forbid the broken version (if you are using aptitude and not apt) using sudo aptitude forbid-version openjdk-8-jre-headless.	c
+I suggest you have a look at getpass module. To help you get started, take a look at the following links:getpass (examples series 1) and examples series 2  c
+getpass is to get input without having it show on the command line, but it seems pretty useless for OP's use case. It's homework, and I'm guessing they are mostly having trouble on the validation part, not getting input (which is trivially easy).  c
+You can join the 3 conditions in one line, and avoid the variable is_valid. You also missed the condition of the first character:   c
+if re.match(r"[A-Za-z][A-Za-z0-9-_]{5,}$", password) is None: ...   c
+regex stands for regular expressions and uses the library re to work with srings, characters etc(see docs.python.org/3/library/re.html).    c
+Yeah thanks you all for the help    c
+all_languages is an Array.  c
+puts all_languages returns: c
+user_language is a String.  c
+puts user_language returns: c
+puts remove_language returns:   c
+puts all_languages - remove_language returns:   c
+I'm not understanding why your last attempt using array - array isn't working.  c
+Try it rails console.   c
+sure, but current_user.language is a method call.   c
+Your code doesn't work, because available_locales returns an array of symbols and you are attempting to remove a string.    c
+Furthermore, you should avoid delete because it modifies the receiver (modifying available_locales might result in bugs later on).  c
+You can use Rails' Array#without instead which returns a new array: c
+I18n.config.available_locales returns symbols *.    c
+And your current_user.language is a string. c
+"en" is not at all the same thing as :en.   c
+all_languages = I18n.config.available_locales.map(&:to_s)   c
+BTW, in Rails there's also Array#without.   c
+This is just an example, and if you want to remove the specific item, you could use delete method to get the desired array and then assign it to I18n.config.available_locales  c

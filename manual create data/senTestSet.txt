@@ -1,0 +1,100 @@
+This might be one case for using gotos.	s
+I typically approach this kind of problem by nesting the conditionals:	s
+My question is about the line I have mentioned in the subject and which I can see in many places inside the production code.	s
+The other branches are irrelevant to my question.	s
+In asm, this works exactly like a hidden first arg,	s
+This would work if there is no case where the first alphabet comes after a space.	s
+In most cases, though not all, they'll be equivalent.	s
+You can find the first alpha character and capitalize it like this:	s
+This, in my opinion, is preferable to regex.	s
+In case this issue reappears in 2020, it is likely that the default behavior of openjdk was changed, and you will then need to update the maven surefire plugin.	s
+I thought the conditions cant be joined but now I learned :D    s
+Thank you!  s
+You are welcome :)  s
+dont forget to accept the answer that you found most useful s
+why not get the whole thing in the regex?   s
+Can I know what difference between regex and validate.....? s
+@Hann does your issue resolved? s
+The user language is defined in the users table.    s
+A method returns current user's language    s
+I try to apply the delete(obj) method to the array, but this does not alter the array:  s
+I try to work on arrays only, still it does not alter the languages array:  s
+Check my answer.    s
+You could override language or maybe have the ORM convert it.   s
+The code becomes easier if you are dealing with the correct "type" right from the start.    s
+To fix this, you have to turn your string into a symbol.    s
+That said, this should work:    s
+Alternatively you could change the available locales into strings instead of changing to user language into a symbol.   s
+It probably depends on the backend being used, but unless the API guarantees it, dup is the safer choice.   s
+Does it have to be Bootstrap 3? s
+Because with Bootstrap 4 you can just add the class mx-auto to the div.row to make it's children centered.  c
+Oh well.    s
+I think the problem here is that your 3 columns do not add up to 12, it add up to 9.    s
+It has to add up to 12 or else you'll have that missing col-3 gap.  c
+Changing the column class to col-4 should fix this. c
+Use md-4 and add right/left padding to the row? c
+Bootstrap 3 doesn't have anything native to do that, which is why mx-auto was added in 4    c
+As others have pointed out, change col-md-3 to col-md-4 c
+the solution I know of for Bootstrap 3 is to add a max-width to a container so it doesn't stretch the full screen/element (without removing the 100% from the images as that would no longer make them resize/responsive).  c
+You may also want to use col-sm-4 or col-sm-6 so they don't end up too big when the screen is smaller:  c
+All you gotta do is change col-md-3 to col-md-4.    c
+In Bootstrap, the numbers in a div.row has to add up to 12 including the use of offsets.    c
+Also get rid of width="100%" from the columns because that will stretch your image and use the exact size image you need.   c
+That's better :)    s
+The only catch I can see is that the asker says: "I do not want the columns to span the entire row. [...]   s
+That is why I put three col-md-3", so col-md-4 might not be what they want. c
+You can offset each column using the col-md-offset-* class in Bootstrap as follows: c
+The above method will add equal spaces between the relative columns.    s
+For this I would use 2 rows, the first with an -offset (I used 8 with an offset of 2).  c
+Then change your 3 columns to span 4 instead of 3 to add up to 12.  s
+Like this (using xs col size for demo): c
+I'm just starting with Java.    s
+I wonder if there's a way to add a method so that any String can call that method, similar to how we have now string1.equals(string2) that you could use string1.equalsOr(string2, string3, string4, string5).  c
+I know I can make my own static method, but wonder if I could make it available to any string.  s
+If you want to check equality of your string1 to a set of strings string2, string3, string4, string5.   c
+It's better to use any collection (i.e. Set or List).   s
+For example, if you use s
+it will give you the espected result.   s
+To determine if string equals any of the parameters passed to Stream.of().  c
+This is not as pretty as a simple equalOr() method, but it still gets the job done without having to write your own method  c
+I need to reverse a string using a for loop but I just can't do it. s
+What I'm doing wrong?   s
+There are three errors in the code. s
+You can not use s[index] = value, since the string is immutable.    c
+The first write (when it would be possible) would write on the position [s.Length - 0], and this position is out of range, since it s indexed from 0 to s.Length - 1.   c
+And the last error is, that you are using uninitialised value of sReversa.  c
+Strings are immutable.  s
+You can't change them character by character.   s
+If you want random access to the characters in a string, convert it to a char array first (using ToCharArray), then convert it back when you're done (String has a constructor that accepts a char array).  c
+There are much easier ways to reverse a string (e.g. LINQ would let you do var output = new string(input.Reverse().ToArray());), but if you want to use a for loop and your current approach, this is probably the piece of information you are missing.    c
+These will be the minimal changes required in your code:    s
+As others said this may not be the best approach for very large number of string manipulation / formation.  s
+Instead, use StringBuilder. c
+Below is the snippet on how to use StringBuilder:   c
+You can not use s[s.Length - i] = sReversa[i];  c
+Because Strings are immutable.  s
+Instead, you can use sReverse = sReverse + s[Length];   c
+The following code will give you reverse of a string:   s
+Note: For a large number of iteration, this might be a performance issue.   s
+The simplest way to make your code work with minimal changes is to use a StringBuilder. c
+Unlike string a StringBuilder is mutable.   c
+I have a txt file with the following line:  s
+I want to be able to put the containments h4d gh34245 ran54 inside a variable in my python script.  c
+However this just prints ENBO => [ , but I want a way to read the line below my current line ENBO => [ to get the line h4d gh34245 ran54 and store it inside of a variable in my script so I may read from it accordingly.  c
+Also, I do not want to change the txt file in anyway.   s
+And I want to search for the containments of ENBO specifically, not hard-code search for h4d gh34245 ran54  c
+Use a context manager to loop over the file and print/store the next value if a line of interest is found:  s
+You can do this because f is a generator, it prints the next line if ENBO and continues after the next line.    c
+Happy to help, just pay attention to the criteria in the for loop, in this case only ENBO is extracted. c
+Using pathlib for your file operations is highly recommended.   c
+Now, if your file is really this simple, and you really just want the second line, you can use the method readlines().  c
+Note that readlines() goes through the whole file, so if your file might be of an unknown length, you should probably refrain from using it.    c
+expression .map(x -> x.toString()) could be replaced with method reference to the Object class like map(Object::toString).	c
+String.valueOf(wrongLetters) calls toString() on array of characters thats why it look likt this	c
+You can simply use Array.map() and Object.keys()	c
+You could reduce the array by adding all objects to the result set	c
+You can use moment(newdate).format("YYYY-MM-DD")	c
+You should check with if (currentNumber == -1) if the element is NOT in an array	c
+Array.IndexOf() returns index of numberValue in array, or -1 if it does not exist	c
+Of course, you can concatenate all of the array's strings with String.join("", list)	c
+Try calling intent in onSuccess() method	c

@@ -1,0 +1,300 @@
+﻿Write a console app in C# to find an index i in an array that is the maximum number in the array.	s
+If the maximum element in the array occurs several times, you need to display the minimum index.	s
+If the array is empty, output -1.	s
+Please let me know what is wrong in my code?	s
+If I input the array a = { 1, 2, 46, 14, 64, 64 };, for instance, it returns 0, while it should be returning 4.	c
+Debug. Step through code and see where it goes wrong.	s
+"Please let me know what is wrong in my code." You should tell us what goes whrong. This means describe what problem you´re facing. Do you get any errors? Unexpected results? Afterwards we may able to help you to solve that problem.	s
+if (maxCount > 1) return minIndex; Should be maxIndex	c
+Why you calculate (also) the min if you just want the max? Methods should only do what they're supposed to do	s
+Your calculation is correct, but you return the wrong variable minIndex instead of maxIndex.	s
+Don't do more than necessary in a method.	s
+This calculates also the min-index and the count how often it appears, then it does nothing with the results.		s
+Here is a compact version:	s
+It also sets maxInd = -1 which was part of your requirement.	c
+Since MatthewWatson had an objection regarding repeating double.MinValue in the array, here is an optimized version:	s
+If code-readability/maintainability is more important and you don't care of few milliseconds more or less, you could use LINQ (a version that enumerates only once):	s
+This works with every kind of sequence and types not only with arrays and doubles.	s
+Obviously you could fix that by changing if (max < array[i]) to if (maxInd < 0 || max < array[i]), but it's probably not worth it!	c
+this code will incorrectly return -1 rather than 0 - but it seems really unlikely that you'd ever hit that edge case.	s
+just wondering, why does this code get 3 upvotes, whereas mine gets 4 downvotes?	s
+Whilst they basically both do EXACTLY the same, except this one iterates through the ENTIRE array twice	s
+Array.IndexOf(numbers, numbers.Max());	c
+It returns zero, because minIndex is indeed zero: Change minIndex to maxIndex:	s
+To be fair, this is really the correct answer to the question "Why isn't this code working".	s
+The other answers are all rewriting the code rather than correcting it.	s
+also, this code can be replaced with a single line Console.WriteLine(Array.IndexOf(a, a.Max()))	c
+"Your code in general is way too complicated with way too many variables"	s
+Again, like with the other answers on this page you have missed the point of the question.	s
+I am having trouble changing the the h1 tag when I click on either of the p tags.	c
+As of now I only get the error Cannot read property value of undefined.	s
+getElementsByTagName returns collection of nodes.	c
+Thanks for the help. Is there a long way to extract the data set from the p tag? Or would it make sense to just use this.	s
+This will do the trick (javascript only) p.getAttribute('data-value'); returns the value of the specified attribute	c
+Use Array.from() to build an Array from the HTMLCollection returned from getElementsByTagName().	c
+What I am trying to achieve: center a container div (that contains two divs) and in 2nd div, bottom align text	s
+I can't align my two paragraphs to be at the bottom. They are at the top.	s
+My container div isn't aligned to the center too	s
+Thank you! it works!	s
+however, there's a little gap between img and the bottom border.	s
+why so? i don't see any padding in your column2 code	s
+Changing your align method to Flex, you could achieve this easy, take a look bellow	s
+Just removed float: left on the column elements and added display: flex and align-items: flex-end at the container.	c
+The easiest and probably nicest solutions for this is using a "flexible box layout".	s
+I have a class API with a function which I wish to call in my component.	s
+I do not arrive in found how to call this function in my component and as to get back its result to put it in setState	s
+You wouldn't call this.setState() from your exported function.	c
+You should create a function that does the authentication, and then returns a Promise if the authentication was successful or failed.	s
+In your componentDidMount(), or onSubmit(), call the function and in the component itself, use this.setState() to update the state variables.	c
+First: separate your setState from your api helper method like:	s
+Then call you api function inside of componentDidMount() lifecycle method of your Component like:	c
+On windows, it is located in python-installation/scripts/pip.exe	c
+And it says it is already installed but for Python 2.7 at the bottom. My script shows it is a Python 3 script at the top though.	s
+I am using the Jupyter notebook with Python 3 selected. On the first line of a cell I am entering:	s
+The error I get from the notebook is, ImportError: No module named 'pandas'. How can I install pandas to the jupyter notebook?	s
+The computer I launched the Jupyter notebook from definitely has pandas.	s
+When I do echo $PATH in Ubuntu is shows that '/home/user/anaconda2/bin' is on the first entry.	c
+I think I may need to change this to be anaconda3?	s
+Additionally, I tried removing anaconda but still experience the same error.	s
+I have tried to make so many quick fixes now, that I am not sure what the next step is to get this working.	s
+and I like to extract a DataFrame containing only thoses rows,	s
+that contain any of selection = ['cat', 'dog'].	c
+So the result should look like this:	s
+What would be the simplest way to do this?	s
+Use df = df.loc[df.species.str.contains('cat|dog'),:]	c
+Using Numpy would be much faster than using Pandas in this case,	s
+is looking for the presence of 'cat' or 'dog',	s
+i would recommend changing the mask to this mask = df.species.apply(lambda x: any(item for item in selection if item in x))	c
+updated the lambda with selection example	s
+This is an easy and basic approach.	s
+You can create a function that checks if the elements in Selection list are present in the pandas column list.	s
+Hope it helps.	s
+Using pandas str.contains	c
+You could then use this list to create a column that contains True of False based on whether the record contains at least one element in Selection List and create a new data frame based on it.	s
+here is my view:	s
+any help will be appreciated.	s
+Not related to the question, just a note.	s
+Shortenings like "for -> 4", "weight -> w8" can quickly render your code unreadable, best avoid them.	c
+Does your action get hit if you enter in the browser address manually: http://localhost/Test/AddToCart?value=123?	c
+are you getting the alert at alert("Selected Weight " + w8) ?	c
+There are few things that could go wrong here.	s
+So it looks like your posting code should look like that	s
+Third thing is that you are not preventing default behavior of your button.	s
+You can do so with return false or calling preventDefault, like so:	c
+i have edited but the function is not hitting	s
+After all, what you should be doing first, is to check your browser developer console, to see what the actual problem is.	s
+Your using (Html.BeginForm()) is inside the for loop. 	c
+This means you will create as many form tags as there are elements in the loop.	s
+So place your using (Html.BeginForm()) before you begin the loop.	c
+Also this will generate multiple submit buttons with exactly the same id, which is absolutely wrong as html element id must be unique	s
+It could possible be that the controller is expecting an integer value passed.	s
+A quick check would be to set this value to a string to see if it hits.	s
+Otherwise you could try the suggestion below.	s
+Try parse the weight value var weightValue = parseInt(w8);	c
+Have you set a breakpoint on the controller action and is it getting hit?	s
+Any console errors linked to the client side?	s
+Please Change following some bit changes and try.	s
+Please call foreach under the using (Html.BeginForm())	c
+i have many products in page, when i select weight and press add to cart button it only works on first product and not on all others	s
+I have an object like this:	s
+And I have found a way to list all the key objects:	s
+But how can I print a list with key, value, name, denominations?	s
+I tried keyVal.properties but that didn’t work.	c
+I've tried to search for a solution here, but haven't found anything.	s
+What I want is an output that looks something like this:	s
+You can access it this way. This might help you.	s
+You could use Object.keys(currencyTypes) to retrieve all of an objects keys, and then loop over those:	c
+You could use for...of loop with Object.entries to get key value.	c
+then iterate over that with Array.prototype.forEach.	c
+If you represent your collection as an array, it'll becomes easier to do this kind of things:	s
+If you want to stay with using an object, look at Object.keys(), Object.values() and Object.entries().	c
+Those will do alot of the converting back and forth from objects to arrays.	s
+basically is the same as Object.keys():	c
+The function you coded to get the amount of keys in the object,	s
+See if this helps. with pd.option_context('display.max_rows', None, 'display.max_columns', None): print(df)	c
+In case you want to have "," too, just change the line print("\t".join([str(ele) for ele in subLst]))	c
+And the complete thing as a one-liner: print("\n".join([",\t".join([str(ele) for ele in subLst]) for subLst in myLst]))	c
+Which can be used in order to make everything shorter	s
+You have a nice chance to use map() here: print("\t".join(map(str, sub_list)))	c
+Your concrete format wishescan be solved by printing with ljust to add the needed spaces:	s
+Generally for formatting you can use the string format mini language to format your output to your liking:	s
+The format string "{:<{}} ".format(elem,max_len+2) formats element rightaligned into max_len+2 characters.	c
+The first thing is just to make your , not appear on the start of the line.	s
+OMG this is so convoluted.	s
+Try this: print('\n'.join('\t'.join('{:{width}}'.format(y, width=m) for y in x) for x in a))	c
+Which gives a transposed copy of your data like this:	s
+Then we use the map function to apply the len(str(x)) function over these columns:	c
+or e.ljust(spacing[i] + 1) if you wish	c
+However this just prints ENBO => [	c
+And I want to search for the containments of ENBO specifically, not hard-code search for h4d gh34245 ran54	c
+This is tested in a mock text file:	s
+Note that readlines() goes through the whole file,	c
+There are three errors in the code.	s
+You can not use s[index] = value, since the string is immutable.	c
+The first write (when it would be possible) would write on the position	s
+and this position is out of range, since it s indexed from 0 to s.Length - 1.	c
+convert it to a char array first (using ToCharArray),	c
+LINQ would let you do var output = new string(input.Reverse().ToArray());	c
+but if you want to use a for loop and your current approach, this is probably the piece of information you are missing.	s
+These will be the minimal changes required in your code:	s
+Instead, use StringBuilder.	c
+You can not use s[s.Length - i] = sReversa[i];	c
+Instead, you can use sReverse = sReverse + s[Length];	c
+The following code will give you reverse of a string:	s
+For a large number of iteration, this might be a performance issue.	s
+The __doPostBack() method works well.	c
+From your JavaScript, retrieve the reference to the button using its ClientID and then call the .click() method on it.	c
+This will call the 'RaisePostBackEvent' method in your code file with the 'eventArgument' as the 'argumentString' you passed from the JavaScript.	c
+it gives me an error says object expected. I have called it in such a way: window.onbeforeunload = confirmExit; //debugger; function confirmExit() { var pageId = '<%= Page.ClientID %>'; var argumentString = 'ReleaseLock'; __doPostBack(pageId, argumentString); }	c
+Another solution (very hackish) is to simply add an invisible ASP button in your markup and click it with a JavaScript method.	s
+By doing so, if your control is inside an update panel, the page will not refresh.	s
+If anyone else is like Merk, and having trouble over coming this, I have a solution:	s
+Add this line to page load if you are getting object expected error.	s
+You can also get it by just adding this line in your JavaScript code:	s
+There are some compelling warnings about the usage of XHTML, primarily centering around the fact that the mime-type for such a document should be sent as: Content-type: application/xhtml+xml	c
+Yet IE 6 and 7 don't support this, and then websites must send it as: Content-type: text/html	c
+If you want to use XHTML 1.0 in an HTML-compatible way, that's fine.	s
+XHTML is XML based, so it allows easier parsing and you can also use the XML Components of most IDEs to programatically query and insert stuff.	s
+This might be one case for using gotos.	s
+Cannot think of anything better than int callDo2(void) { if(do2()) { undo1(); return 2; } return callDo3(); } at the moment,	c
+you could chain your function calls using else if like this	c
+Also, note it is wrong: if Do5() fails, we don't want to run Undo5()	c
+switch(ret) should be switch(ret-1).	c
+I typically approach this kind of problem by nesting the conditionals:	s
+My question is about the line I have mentioned in the subject and which I can see in many places inside the production code.	s
+The other branches are irrelevant to my question.	s
+I don't think if (0) {..} introduces any parsability/readability problem.	c
+Almost all compilers will remove the if (0) {} part.	c
+I’d remove the if (0) branch and reformat the rest such that else is on its own line, surrounded by a guard along the lines of #if TEST1_ENABLED && TEST2_ENABLED.	c
+In asm, this works exactly like a hidden first arg,	s
+so both the member-function foo::add(int) and the non-member add which takes an explicit foo* first arg compile to exactly the same asm.	c
+it's just implicit in C++, i.e. T Class::method(...) is just syntactic sugar for T Class_Method(Class* this, ...).	c
+GCC 7.3.0 with the -march=x86-64 -O -S flag is able to compile cout << e.foo() to three instructions:	c
+This is a call to std::ostream::operator<<.	c
+Remember that cout << e.foo(); is syntactic sugar for std::ostream::operator<< (cout, e.foo());.	c
+And operator<<(int) could be written two ways:	c
+static operator<< (ostream&, int), as a non-member function, where the operand on the left is an explicit parameter, or operator<<(int), as a member function, where it’s implicitly this.	c
+In fact, inside a member function (that isn’t static), x, this->x and (*this).x all mean the same thing.	c
+Wouldn't it be better to reverse the condition and use string.isalpha() instead?	c
+This would work if there is no case where the first alphabet comes after a space.	s
+In most cases, though not all, they'll be equivalent.	s
+You can find the first alpha character and capitalize it like this:	s
+This, in my opinion, is preferable to regex.	s
+So it should work provided str.isdigit is acceptable for OP's user case.	c
+In case this issue reappears in 2020, it is likely that the default behavior of openjdk was changed, and you will then need to update the maven surefire plugin.	s
+Note that 191-b12 != 181-b13.	c
+After downgrading, you can forbid the broken version (if you are using aptitude and not apt) using sudo aptitude forbid-version openjdk-8-jre-headless.	c
+I suggest you have a look at getpass module. To help you get started, take a look at the following links:getpass (examples series 1) and examples series 2  c
+getpass is to get input without having it show on the command line, but it seems pretty useless for OP's use case. It's homework, and I'm guessing they are mostly having trouble on the validation part, not getting input (which is trivially easy).  c
+You can join the 3 conditions in one line, and avoid the variable is_valid. You also missed the condition of the first character:   c
+I thought the conditions cant be joined but now I learned :D    s
+Thank you!  s
+You are welcome :)  s
+dont forget to accept the answer that you found most useful s
+why not get the whole thing in the regex?   s
+if re.match(r"[A-Za-z][A-Za-z0-9-_]{5,}$", password) is None: ...   c
+Can I know what difference between regex and validate.....? s
+regex stands for regular expressions and uses the library re to work with srings, characters etc(see docs.python.org/3/library/re.html).    c
+@Hann does your issue resolved? s
+Yeah thanks you all for the help    c
+all_languages is an Array.  c
+puts all_languages returns: c
+The user language is defined in the users table.    s
+A method returns current user's language    s
+user_language is a String.  c
+puts user_language returns: c
+I try to apply the delete(obj) method to the array, but this does not alter the array:  s
+I try to work on arrays only, still it does not alter the languages array:  s
+puts remove_language returns:   c
+puts all_languages - remove_language returns:   c
+I'm not understanding why your last attempt using array - array isn't working.  c
+Check my answer.    s
+Try it rails console.   c
+sure, but current_user.language is a method call.   c
+You could override language or maybe have the ORM convert it.   s
+The code becomes easier if you are dealing with the correct "type" right from the start.    s
+Your code doesn't work, because available_locales returns an array of symbols and you are attempting to remove a string.    c
+To fix this, you have to turn your string into a symbol.    s
+Furthermore, you should avoid delete because it modifies the receiver (modifying available_locales might result in bugs later on).  c
+You can use Rails' Array#without instead which returns a new array: c
+I18n.config.available_locales returns symbols *.    c
+And your current_user.language is a string. c
+"en" is not at all the same thing as :en.   c
+That said, this should work:    s
+Alternatively you could change the available locales into strings instead of changing to user language into a symbol.   s
+all_languages = I18n.config.available_locales.map(&:to_s)   c
+It probably depends on the backend being used, but unless the API guarantees it, dup is the safer choice.   s
+BTW, in Rails there's also Array#without.   c
+This is just an example, and if you want to remove the specific item, you could use delete method to get the desired array and then assign it to I18n.config.available_locales  c
+Does it have to be Bootstrap 3? s
+Because with Bootstrap 4 you can just add the class mx-auto to the div.row to make it's children centered.  c
+Oh well.    s
+I think the problem here is that your 3 columns do not add up to 12, it add up to 9.    s
+It has to add up to 12 or else you'll have that missing col-3 gap.  c
+Changing the column class to col-4 should fix this. c
+Use md-4 and add right/left padding to the row? c
+Bootstrap 3 doesn't have anything native to do that, which is why mx-auto was added in 4    c
+As others have pointed out, change col-md-3 to col-md-4 c
+the solution I know of for Bootstrap 3 is to add a max-width to a container so it doesn't stretch the full screen/element (without removing the 100% from the images as that would no longer make them resize/responsive).  c
+You may also want to use col-sm-4 or col-sm-6 so they don't end up too big when the screen is smaller:  c
+All you gotta do is change col-md-3 to col-md-4.    c
+In Bootstrap, the numbers in a div.row has to add up to 12 including the use of offsets.    c
+Also get rid of width="100%" from the columns because that will stretch your image and use the exact size image you need.   c
+That's better :)    s
+The only catch I can see is that the asker says: "I do not want the columns to span the entire row. [...]   s
+That is why I put three col-md-3", so col-md-4 might not be what they want. c
+You can offset each column using the col-md-offset-* class in Bootstrap as follows: c
+The above method will add equal spaces between the relative columns.    s
+For this I would use 2 rows, the first with an -offset (I used 8 with an offset of 2).  c
+Then change your 3 columns to span 4 instead of 3 to add up to 12.  s
+Like this (using xs col size for demo): c
+I'm just starting with Java.    s
+I wonder if there's a way to add a method so that any String can call that method, similar to how we have now string1.equals(string2) that you could use string1.equalsOr(string2, string3, string4, string5).  c
+I know I can make my own static method, but wonder if I could make it available to any string.  s
+If you want to check equality of your string1 to a set of strings string2, string3, string4, string5.   c
+It's better to use any collection (i.e. Set or List).   s
+For example, if you use s
+it will give you the espected result.   s
+To determine if string equals any of the parameters passed to Stream.of().  c
+This is not as pretty as a simple equalOr() method, but it still gets the job done without having to write your own method  c
+I need to reverse a string using a for loop but I just can't do it. s
+What I'm doing wrong?   s
+There are three errors in the code. s
+You can not use s[index] = value, since the string is immutable.    c
+The first write (when it would be possible) would write on the position [s.Length - 0], and this position is out of range, since it s indexed from 0 to s.Length - 1.   c
+And the last error is, that you are using uninitialised value of sReversa.  c
+Strings are immutable.  s
+You can't change them character by character.   s
+If you want random access to the characters in a string, convert it to a char array first (using ToCharArray), then convert it back when you're done (String has a constructor that accepts a char array).  c
+There are much easier ways to reverse a string (e.g. LINQ would let you do var output = new string(input.Reverse().ToArray());), but if you want to use a for loop and your current approach, this is probably the piece of information you are missing.    c
+These will be the minimal changes required in your code:    s
+As others said this may not be the best approach for very large number of string manipulation / formation.  s
+Instead, use StringBuilder. c
+Below is the snippet on how to use StringBuilder:   c
+You can not use s[s.Length - i] = sReversa[i];  c
+Because Strings are immutable.  s
+Instead, you can use sReverse = sReverse + s[Length];   c
+The following code will give you reverse of a string:   s
+Note: For a large number of iteration, this might be a performance issue.   s
+The simplest way to make your code work with minimal changes is to use a StringBuilder. c
+Unlike string a StringBuilder is mutable.   c
+I have a txt file with the following line:  s
+I want to be able to put the containments h4d gh34245 ran54 inside a variable in my python script.  c
+However this just prints ENBO => [ , but I want a way to read the line below my current line ENBO => [ to get the line h4d gh34245 ran54 and store it inside of a variable in my script so I may read from it accordingly.  c
+Also, I do not want to change the txt file in anyway.   s
+And I want to search for the containments of ENBO specifically, not hard-code search for h4d gh34245 ran54  c
+Use a context manager to loop over the file and print/store the next value if a line of interest is found:  s
+You can do this because f is a generator, it prints the next line if ENBO and continues after the next line.    c
+Happy to help, just pay attention to the criteria in the for loop, in this case only ENBO is extracted. c
+Using pathlib for your file operations is highly recommended.   c
+Now, if your file is really this simple, and you really just want the second line, you can use the method readlines().  c
+Note that readlines() goes through the whole file, so if your file might be of an unknown length, you should probably refrain from using it.    c
+expression .map(x -> x.toString()) could be replaced with method reference to the Object class like map(Object::toString).	c
+String.valueOf(wrongLetters) calls toString() on array of characters thats why it look likt this	c
+You can simply use Array.map() and Object.keys()	c
+You could reduce the array by adding all objects to the result set	c
+You can use moment(newdate).format("YYYY-MM-DD")	c
+You should check with if (currentNumber == -1) if the element is NOT in an array	c
+Array.IndexOf() returns index of numberValue in array, or -1 if it does not exist	c
+Of course, you can concatenate all of the array's strings with String.join("", list)	c
+Try calling intent in onSuccess() method	c

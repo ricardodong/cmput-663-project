@@ -1,0 +1,362 @@
+I have a list that is the `a=[0,1]` and I want to change with `a=[0x00,0x001]` type. How can I do this? I tried this way	c
+Using hex directly should work:	s
+You can `format(...)` the string as hex and `zfill()` the needed amount of zeros and prepending `'0x'` to it yourself:	c
+As you fail to describe what your wanted outcome is, I can only guess:	s
+Then it doesn't matter which format you use, both should work as soon as you use the correct format string:	s
+So, I'm trying to put numbers into a list and square and print them all.	s
+The first line - `print (math.sqrt(item))` prints square root and the second - `print (item*item)` prints the square.	c
+SyntaxError is due to missing closing parenthesis on line 4 `list(map(float, ListNum)` should be `list(map(float, ListNum))`	c
+Sometimes the error is on the previous line (line 4 in this case), not the one indicated in the traceback (in this case line 5).	s
+And `math.sqrt` is calculating for square root:	c
+In the document of python3, which you can find the link at the bottom, `math.sqrt()` is described as	c
+You can't take the square root of a list, and `ListNum` is a list.	c
+The code will not deliver what you expect though.	s
+I have list of files in directory,ending with numeric.	s
+I'm able to extract the last numeric digit of above files.	s
+Now Here i'm trying to list all files which have higher version then `play_football_5`.	c
+You can use `awk` for this:	c
+`printf` will list all files in the current directory start with `play_football_` and `awk` filters the files with the number greater than 5	c
+With these methods when i execute the class, the testng executes in the below order	s
+This is usually achieved in `TestNG` by using either `dependsOnMethods` or `dependsOnGroups` attribute for the `@Test` annotation	c
+You do this by implementing the interface `org.testng.IMethodInterceptor` and then wiring in the implementation via one of the following means	c
+The example as you would have noticed neither uses priority nor `dependsOnMethods/dependsOnGroups`	c
+You miss to put curly brackets in `TestNG` parameter `(dependsOnMethods = "Submission01")` It should be like `(dependsOnMethods = {"Submission01"})`	c
+I have just began playing around with React hooks and am wondering how an AJAX request should look?	s
+I have tried many attempts, but am unable to get it to work, and also don't really know the best way to implement it	s
+You could create a custom hook called `useFetch` that will implement the `useEffect` hook.	c
+By passing an empty array as the second argument to the `useEffect` hook will trigger the request on  `componentDidMount`	c
+Great answers so far, but I'll add a custom hook for when you want to trigger a request, because you can do that too.	s
+You can create a function using this hook for a specific API method like so if you wish	s
+And then just point `createTodo` to an `onSubmit` or `onClick` handler	c
+So, the correct way is: `useEffect(() => { fetchData() })` where `fetchData` can be written as: `async function fetchData() { ...}`	c
+Here's something which I think will work:	s
+There are couple of important bits:	s
+Traditionally, you would write the Ajax call in the `componentDidMount` lifecycle of class components	c
+The dispose function is very important	s
+you can use that function to cancel a request, clear a timer etc.	s
+Any async function will return a promise, but not a function, so the dispose function actually takes no effects.	s
+I have a comment section where the user can enter comments, it automatically displays comments and the time the comment was entered.	s
+Add for `.comments_wrapper` the `flex: auto;` in order to align time to right	c
+Hope this will help.	s
+`comments_wrapper` selector not taking rest of the place that's why you not seeing the effect.	c
+You need to set the width of the `.comments_wrapper`	c
+Add `flex: auto; to `.comments_wrapper` css	c
+I'm trying to remove oldest Student from my `TreeSet` but the object is not getting deleted.	c
+As others have said, your `compareTo` method is wrong.	c
+You should never `return 1` when two instances are equal.	c
+but also because you are comparing students based only on their age	s
+Luckily, each student has a unique ID, so you could use this id to break ties	s
+Your compare method is simply spoken plain wrong.	s
+I would drop the Comparable interface from Student, and instead implement standalone `Comparator<Student>` instances.	c
+I want to check if table contains anything or not to create itself.	s
+Im trying to use the `contains()` to check but it doesnt work.	c
+you can Check the Row Counts	s
+if the `tbl.rows.length` is 0 that means the table don't have any rows	c
+You can check the number of rows in the table:	s
+you can just check to see if the `innerHTML` property is falsy	c
+There are multiple ways. One of way, you can use `childElementCount` property.	c
+Here is my current code where I am using loading spinner on each page until API response returns	s
+Now my question is how to use this `<app-display-loading>` component within `*ngIf`	c
+in HTML `<ng-container *ngIf="isLoading withLoading">` and in directive `@Input() set ngIf(condition: boolean) { if (condition) {}` does not work perfectly but adding negation on both	c 
+which is just a sugar for:	s
+And here is directive itself:	s
+Don't forget to include `LoadingComponent` into `entryComponents` array	c
+I am using something similar to `<app-display-loading>` all over the project and all I need to do is	c
+but first you need to add `DisplayLoadingComponent` class in the module in which the component is located like this	c
+I need to restructure my all forms and wrap over `<ng-template>`	c
+set `isLoading` accordingly and, set prevent default inside `submit()`	c
+Hi you can use HTTP interceptor for displaying spinner in every request.	s
+Or you can use your loading component on higher level and by CSS you can show loading on whole page so you don't need else condition part.	s
+You can do that using `ng-template` like:	c
+I have a JSON object like this, I wanna access the list array elements with key and value in postman.	s
+JSON format is a method of representing an object in a string, like `const myJSON = '{"foo":"bar"}'`	c
+you can use below codes:	s
+You can get using key and value separately in a array.	s
+I cant able to understand your question can you explain more?	s
+JSON objects are key value pair you cannot get the keys and values in object form as you desire but you can get both in form of arrays from this code	s
+First remove comma from line :  `"qty": null`, otherwise it will cause error in json parsing.	c
+I'm trying to read a dataset and set the integer value of the JSON file as the array of the list.	s
+If I try to get `L1[1234]` this would give an error as `1234` is not a valid index in the `L1` and the indexes are `0,1`	c
+I understand that the list has my potential value for the index as a value stored and in unicode	s
+Assuming you have a list of dicts you could do something like this:	s
+I'm very new to functional programming and I am open to any ideas.	s
+The trouble is that `R.prop('id')` and `R.prop('name')` are functions.	c
+`R.assoc` does not accept functions	c
+`R.multiply` accepts numbers	c
+If we supply `lift(multiply)` with two functions	c
+Unfortunately, this fails again.	s
+In the first one, you could replace `R.merge` with `Object.assign` without any real issues	c
+This solutions uses `R.props` and `R.fromPairs`	c
+You could achieve this by the following:	s
+You can create a pipeline (`R.pipe`) to convert your array of objects to a hash:	c
+This needs to be a unique number.	s
+the code should check the database if this number doesn't already exist. 	s
+What I have results in a page crash	s
+Not to mention, what you have here will not call `checkRandNR()` again	c
+Perhaps it would be more advisable to send a batch of random numbers with `WHERE uid IN (...)` or something so that you are less likely to perform multiple trips to the database	c
+I used this in one of my projects to generate ID:	s
+Based on the answers given, this is what I made, which works!	s
+Note that the `bs.reduce((o, b) => Object.assign(o, {[b]: 0}), {})` is only called once	c
+This does not actually answer the question as asked	s
+`Object.assign()` could directly substitute the spread syntax and mutate the existing object without sacrificing much of your brevity	c
+Iterate array a with `Array.reduce()`	c
+When done, spread the Map's values through `Math.min()`	c
+and note that lookup could deteriorate from ~O(1) to O(log(n)) which would give you a total time complexity of O(n log(n))	s
+The approach can be constructing a hash-map while iterating over array A and access that hash-map while iterating over array B (Refer below code)	s
+Hello I'm trying to remove the actions property from each object within the array data:	s
+`.upRight()` returns `true` when a bot is standing and `false` when not	c
+The issue I'm facing, is that if the `isUpright()` method returns `true` for the first "bot"	c
+if `isUpright()` can transition from `false` to `true` over time	c
+The constructor for `std::string(const char*)` will be used to construct a temporary that will live for the whole lifetime of the function	c
+When the temporary `std::string` is bound to the `const std::string& s`, the temporary is lifetime extended	c
+Note when you say until the call to foo return is not the same as completion of the full-expression containing the call.	s
+As long as you are not doing something like:	s
+Or anything like storing a reference to this const ref, you should be fine.	s
+I would import class in nodejs and use it in `app.ts`	c
+Create `app.ts` with `console.log('hello world');` and run `node app.ts`	c
+However, once you add typescript syntax (`const foo: string = 'bar';`) then it breaks	c
+`import { something }` is a typescript syntax, it won't work in a `.js` file.	c
+You use `tuple(x, y)` to create a tuple form 2 variables.	c
+This one liner will achieve what you want.	s
+One way is to convert both the nested lists into full lists and then use zip. Sample code below:	s
+and i want to check if the following list is the same as one of the lists that the array consist of:	s
+The builtin `any()` short-circuits so that you don't have extra evaluations that you don't need	c
+You can do it by using broadcasting like this:	s
+This applies to example such as `A = np.array([[2,3,4],[2,3,4]])`	c
+It seems I can't sort char array with `Stream.sorted()` method so that's why I used a second map operator.	c
+Instead of creating and sorting a `char[]` or `int[]`	c
+Of course, you can also use `map(s -> Arrays.toString(s.chars().sorted().toArray()))` instead of the series of four maps	c
+Also, you could use `IntBuffer.wrap` to make the arrays comparable, which should be considerably faster than `Arrays.toString`	c
+you get it for free when you wrap the array	s
+Note that for method references of the form `expression::name`	c
+the expression is evaluate once and the result captured, so `canonical(list[0])` is evaluated only once for the entire stream operation	c
+However, I do think that it's strange to return false if the list is empty	s
+All we need is, for each word of the list, to count the occurrences of each character.	s
+For this, we're collecting each word's characters to a `Map<Integer, Long>`, with the keys being each character	c
+While this is true, I wonder whether this is any faster, or even slower, provided that this method presumably presents much greater overhead	s
+for short strings you are right, but for these, it probably doesn't matter anyway.	s
+I'm guessing this is what you what?	s
+Don't write your own parser. If you only need to read that string in each element of the array	s
+So `(JSONArray)JSONValue.parse((String)JsonRow.get("PARAMS"))` would get and parse the nested JSON.	c
+I have a list of dicts like this:	s
+`dict.values` returns a `dict_values` object, which is an iterable containing all the values of the dict	c
+`zip(*thing)` is a classic "transposition" recipe, which takes an iterable-of-iterables and effectively flips it diagonally.	c
+`[[a,b],[c,d]]` becomes `[[a,c], [b,d]]`	c
+You can use `operator.itemgetter` to guarantee ordering of values:	c
+This can be a little bit more memory friendly: `list(zip(*(i.values() for i in l)))`	c
+It seems that this does basically the same as @Kevin's solution with a listcomp instead of a map, correct?	s
+your code is fine, readable and efficient, which sounds Pythonic to me.	s
+You can get the desired information directly:	s
+If you're working with a large list of dicts, you might want to consider pandas.	s
+You could initialize a `DataFrame` directly:	c
+`products.type IN ('FooProduct', 'BarProduct')` will `return 0` if a product type is none of them	c
+Instead of using Correlated subqueries,	s
+This is a basic solution, not so efficient but easy:	s
+This gets orders that have some other product, but it doesn't pick up orders that are mixes only of foo and bar.	s
+I am trying to find the inverse matrix of a given matrix using the `np.linalg.inv()` function	c
+The question is, is the matrix close to `np.eye(4)` or not.	c
+It seems like you just want to know how to get the identity matrix and compare if the results of your matrix multiplication are close to it.	s
+I've set up a timer for a function I am timing, but want it to reset after a condition is met	s
+The answer to your question as is in an easy Rails-like way to reset after a minute could be:	s
+Also you have this comment: places the time it takes for each loop.	s
+That's not exactly true in your code here, since you aren't resetting timestart on every loop	s
+What exactly are you trying to do after each 1 minute	s
+Looking for something embedded in go	s
+There are a lot of ways to do this and I would suggest the easiest to understand.	s
+Here is another one-liner	s
+To adapt code to output these cases	s
+I will wish in fact to learn to update my data on Laravel	s
+and also change your route with `Route::PATCH('/update/{id}','YourController@update');`	c
+you will need to add a `hidden _method` field to spoof these HTTP verbs	c
+The `@method` Blade directive can create this field for you	c
+you are missing `@method('PUT')` keep in mind that the method tag on your form should remain post this is an additional field.	c
+I have commented the line causing the issue	s
+you have to select the input tag and get the value try this `document.getElementsByTagName("input")[0].getAttribute("value");`	c
+Any tips are greatly appreciated.	s
+The reason I've done it in a separate javascript file is that I'll be calling APIs later on	s
+Your script will be called on load what means it will always return the default value Donald	s
+This is my very first day with classes and Inheritance in Python so please be gentle on me	s
+You overrode the `__init__` of the subclass with a function that only accepts 2 positional arguments.	c
+That means it is valid to say `Employee(1287123)`, but not `Employee('Jack', 'Rome', 23, 'M')`	c
+For class Employee, `Employee.__init__` is hiding `Person.__init__`	c
+Python does very little "magic" in creating classes	s
+you usually get precisely what you specified	s
+It is good practice not to directly invoke methods of the base class	s
+avaScript Dates works in microseconds since UNIX time	s
+This problem is especially clear if you try to combine this with `setTimeout` or `setInterval`	c
+I would personally recommend simply using `Math.random()` for generating your random numbers	c
+are we not just doing a modulus of the epoch time	s
+`new Date()` is converted to the timestamp value	c
+So if we have e.x. `1540808514277 % 100` the result will be something between 0	c
+Actually, the expression `new Date() % 100` can be translated to `Date.now() % 100` which is propably more clear	c
+The rule here is mathematical and can be expressed in one sentence:	s
+The desired output is as follows:	s
+I have a big text file like the small example	s
+output should be `z = "458888888"` and `z1 = "+91"` else false	c
+and to match with given array of country code is `y = ["+91","+92","+923","+912"]`	c
+I don't know what is first step to proceed with this question, any help and suggestion	s
+You might use `String.prototype.indexOf`	c
+its failing in this case `y = ["+1","+1684"] , x= "+168402443432424"`	c
+What is the expected output in the above case	s
+If possible avoid the '+' sign from your array items, this will make the solution alot eassier	s
+sort the array in descending order, it will eliminate the chance to get partial matching	s
+I am creating an app for electricity recharge payment	s
+I want the app to work like this	s
+what kind of problem are you facing	s
+for example `items[0]` belongs to `lists[0]` etc.	c
+My code was not, check my code below	s
+Since the index in array is 0 based AND `i=0` you have to change	c
+Just check for the necessary conditions before printing	s
+and also check for printing the values of array which are being pointed by indexes which are out of bound	s
+That is why it showed undefined	s
+You can use `Array.sort()` - always move the `Unassigned` to the end (the two ifs).	c
+You cannot assign to `list[x]` to create a new item in the list	c
+That is the syntax for modifying existing items	s
+Python does not allow this	s
+Given that zero length arrays are not permitted in C (so `arr[0]` always exists)	c
+and you already have explicit code for the opening brace	s
+Sorry I misread the `,` in `printf(", %d", arr[i]);`	c
+Idea is just loop till `i < SIZE-1` and print the last digit outside of the loop	c
+there might be a chance that you didn't write `@yield('content')` in `layout.dashboard` blade template	c
+To extend a blade in laravel, you have to tell the file that should be extended where you want the section to be	s
+So your file to extend needs to have a `@yield('sectionName')` in order to extend the file correctly	c
+`@extends` It allows you to include the content of the one file into another	c
+The `@section` directive, as the name implies, defines a section of content	c
+you can use either `@stop` or `@endsection` both work fine.	c
+Is there any way to generate an apk file from android app Bundle via terminal or using android studio	s
+Read and reverse data chunk by chunk from a csv file and copy to a new csv file	s
+If you use pandas.read_csv() you dont have to do chunked transfer	c
+If you did you could call `sort_index()` with or without `ascending=False` depending on the order	c
+Pandas can write CSV too, please use that instead	s
+If you have sufficient hard disk space, you can read in chunks, reverse and store	s
+Below is an example with Pandas which also uses pickle	s
+You were calling the function `factorial(n)` but you haven't define n outside the function	c
+You can use math library in python.	s
+Inputs by default is String, You need to convert it to `int`	c
+Now that `n = input("enter the number")` is outside the recursive loop it is only called once and n is not externally updated during the recursion	c
+I'm using Angular 6 with an HTTP Interceptor configured to apply bearer token to outgoing requests	s
+I have a table `death_notice` and `notice_time`	c
+Now, I want to soft delete the data that crossed 35 days automatically in laravel 5.6	s
+Create a function to check the current time - `created_at column, if> 35 days delete ...`	c
+you can create laravel scheduling that run every night and execute below query	s
+where should i place this code to run and delete data automatically	s
+Hence the new key becomes `(4, 4)` and it replaces `(8, 9)`	c
+I am not able to understand how to access a list of lists which is the value to the key!	s
+don't forget about operator precedence, probably you mean `8 - (0+4)`	c
+I would like to subtract the sum of the corresponding elements of the nested lists in the values from each element of each key, and replace the key with the result	s
+For your specific case, this should work	s
+you're modifying keys while iterating (use `list (a.keys())` to avoid this)	c
+This was an inefficient way to edit it.	s
+You can easily achieve this using jQuery `.fadeOut()` effect.	c
+name distinct function name for distinct button id and set the background according to that	s
+call the same function but this time inside the function pass a parameter of button ID	s
+You could separate the logic into different functions and pass values as arguments to them	s
+Let's say my nested array is in the format `[latitude, longitude]` and the array that I want to input is `[[10,20],[30,40],[50,60]]`	c
+I want to return an array of only latitudes so `[10, 30, 50]`	c
+You could use the `.map()` method like so	c
+This is how you do it, for loops are not	s
+I'm still relatively new to Python	s
+The prompt that I was given for the program is to write a random number game where the user has to guess the random number	s
+Use `and` instead of `or` would work	c
+No string can possibly equal all of those different letters at once	s
+You can replace the `PB + LB` part of the code with any list that you want	c
+However, if you need to remove it in-place in the existing list	s
+Or just correct 2nd way `while(n != 0 && i++)`	c
+`for (int n = 20; n > 0; n /= 2) ch[i++] = (n%2) + '0';` followed by `for (int j = 0; j < i; j++)`	c
+and `&&` is applied to `n != 0` and the updated version of i	c
+In general, use  `char ch[sizeof(int) * CHAR_BIT];`	c
+I am attempting to write a program that takes a user's input	s
+Then let the calculation of nth term of the Fibonacci sequence `f = fib2(n);` inside that function.	c
+If I move `number.innerHTML = count;` to the function, would that then fix the problem	c
+At the end, use `Object.values` to get the resultant array.	c
+I have two divs with `id = "even-date"` and `id = "odd-date"`	c
+If your concern is only display, then you can use script and css like below	s
+Thanks Ankush however I am not able to replicate on jsfiddle, can you please check this onec	s
+I am a 11 year old app programer and I am making a calculator app	s
+It's better to use double because in Java when you divide a smaller integer to bigger integer you will get 0	s
+Try this: `100 * num1 / num2`	c
+But that row `document.getElementById("message").style.display = "block";` selects only first div	c
+As the others have mentioned ids are unique and can only be used once on a page, so use a class instead	s
+There's also `document.querySelectorAll()` which is much more powerful	c 
+You can use jquery and its selector	s
+Try changing the initialization of number_max from `number_max = user_number` to `number_max = 100`	c
+The solution to my problem was so obvious	s
+Is there's way to set Button width 50% of the total screen size	s
+Actually,you could use push to fix it.	s
+assigning the entire array with the object `{ personToList: personToList }`	c
+Just use `list.push(personToList)` but set your state like this `this.state.newPerson = [];`	c
+First, make sure you installed `react@next` and `react-dom@next`	c
+When doing this, be careful with the sequence of your conditions as putting (hours < 10)` before `(hours < 6)` would break the code	c
+if you used `instance_variable_set("@name", value)` they would be the same.	c
+In the case of a "simple" variable assignment for an instance variable like	s
+As per your question Aren't these two lines the same	s
+but isn't the use people tend to give	s
+While `@name = value` is accessible only from within the scope where the instance variable is defined	c
+there is less chance of introducing a bug `(k.cut += 1);` and	c
+I'm getting the error for `p->letter = 'A'` and `p->age = '9'`	c
+Don't cast the result of `malloc()` in C	c
+As many folks have pointed out you have a problem because in using typedef you went one step too far	s
+This is an example of why you shouldn¡¯t typedef a pointer	s
+I cannot use a radio button and checkboxes name/id cannot be similar	s
+man you are a life saver, thank you very much	s
+For example, when I call `findMaxRepeatCountInWord('expected')` the `letterCount` object ends up with a value of `{ e: 1, x: 1, p: 1, c: 1, t: 1, d: 1 }`	c
+Try testing with `!hasOwnProperty` (and using forEach instead of map) instead	c
+I don't think the `Math.max` function works for an array of number though does it	c
+Your code is correct, apart from the if-condition: `if(letterCount[v] != true)`	c
+Right, but the original code has parenthesis in place of brackets, which is important to change too.	s
+Works like a expression grouping	s
+and of course that requires `myDict[100]` already to exist	c
+However even prettier would be `mydict[100] = mydict.get(100, 0) + 1`	c
+I think you can easily fix it by checking if a `tokens[i].equals("")`	c
+Thus checking if a word is an empty string	s
+Why don't you get rid of all occurrences of 2 or more adjacent spaces and then split	s
+This works even with the header line includes special characters	s
+This works even if there are multiple blank lines in a row.	s
+The line breaks in the code are optional	s
+Use `s/\Q$re//g` to remove anywhere in the line instead of just removing the prefix	c
+To be fair: Just like karakfa makes assumptions, you also do	s
+or you can use `is_null()` method	c
+But the `first()` method give you single element, not a collection or array	c
+Instead of using count you can directly check variable itself is it defined or null	s
+if you use return a collection using `->get()` then you can check `$admin->count()`	c
+Change `if (count($admin))` with the code above	c
+but when if condition true the blank page come rather than print message in if condition	s
+Just replace `if (count($admin))` with `if (!empty($admin))`	c
+The variable name given in wrong way.	s
+This is because scope of this variable `$myfd_query` is only inside if block	c
+It will be much more easier to understand it, even for the author of that code.	s
+you set variable only when `isset($_POST["submit"])` but always execute query	c
+should be something like: `$myfd_query="INSERT INTO 'logi'(firstname,lastname) VALUES('$fname','$lname')";`	c
+Do not quote table name by ' or " symbols	s
+Better to use placeholders, instead of putting variables inside string	s
+Why I can't use `get()` method which pre-defined in ArrayList class?	c
+I would go with `d.as_integer_ratio()[1] == 1`	c
+Ah, the `as_integer_ratio` is better than `as_tuple` and counting trailing zeros	c
+since they are integers by definition but lack an `is_integer` attribute	c
+At this point, it's worth considering all of the other answers	s
+Why do not check if the difference between the truncation to integer and the exact value is not zero	s
+`(*t == &x)` the rest is correct.	c
+Likewise with `int **t = &p` we now notice that just like above	c
+The assignment in `bool a = (*t = &x);` returns a non-null pointer	c
+Now this could be read as `x` is an `int *p` is an `int` and `**t` is an `int`	c
+if you extended the code provided with `int y = 99;` and use `int *p = &y;`	c
+and you could then print various values and addresses before the `bool` line	c
+and print various values and addresses afterwards	s
+I just find myself not sure whether I understand how you are explaining what's going on	s
+I struggle with it all the time	s
+Were this comparison, the expression would compare the same values, and would be true	s
+Since C considers `false=0` and true anything not equal to 0	c
+I need to tell whether a will be true or false, and the correct answer is true	s
+Another way to sort longer numbers is realizing you are just sorting by the reversed number	s
+Define a lambda function to pull out the digits you want, and use it as the sort key.	s
+
+
+
+
+
+
+
+
+
+
+
